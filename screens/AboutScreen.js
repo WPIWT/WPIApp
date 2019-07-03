@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   },
   paraText: {
     fontSize: 20,
-    fontFamily: 'Cochin',
+    fontFamily: 'Calibri',
   },
   paragraph: {
     marginTop: 50,
