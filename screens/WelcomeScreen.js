@@ -11,7 +11,7 @@
 
 import React, { Component } from 'react';
 import {
-  StyleSheet, View, Button, ScrollView, Image, TouchableOpacity, Linking,
+  StyleSheet, View, Button, ScrollView, Image, TouchableOpacity, Linking, StatusBar,
 } from 'react-native';
 
 import { Text, Card, Divider } from 'react-native-elements';
@@ -283,6 +283,9 @@ export default class WelcomeScreen extends Component {
           />
 
         </ScrollView>
+          <View>
+            <StatusBar barStyle="light-content" />
+          </View>
       </View>
     );
   }

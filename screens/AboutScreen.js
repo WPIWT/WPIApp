@@ -4,10 +4,11 @@
 /* eslint-disable global-require */
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const styles = StyleSheet.create({
   titleText: {
-    fontFamily: 'Cochin',
+    fontFamily: 'Optima',
     fontSize: 36,
     fontWeight: 'bold',
   },
@@ -28,7 +29,7 @@ const styles = StyleSheet.create({
   },
   paraText: {
     fontSize: 20,
-    fontFamily: 'Calibri',
+    fontFamily: 'Optima',
   },
   paragraph: {
     marginTop: 50,
@@ -58,15 +59,17 @@ class AboutScreen extends React.Component {
           </View>
         </View>
         <View style={styles.paragraph}>
-          <Text style={styles.paraText}>
-            {' '}
-            The idea for this app was conceived by Sydney Messey, Dennis Leary, and Anika Stundtner
-            through the Stanford University Innovation Fellowship as a means to unite resources in a
-            centralized accessible hub for the WPI community.
-            This app was developed by Manjusha Chava, Elaine Chen, Isabelle Cordova, and Lucas Varella
-            with the help of WPI Web Tech executives John Dyer, Chris Mercer, and Jake Scheide.
-            Funding for the development of this app was provided by the KEEN Grant.
-          </Text>
+          <ScrollView>
+            <Text style={styles.paraText}>
+              {' '}
+              The idea for this app was conceived by Sydney Messey, Dennis Leary, and Anika Stundtner
+              through the Stanford University Innovation Fellowship as a means to unite resources in a
+              centralized accessible hub for the WPI community.
+              This app was developed by Manjusha Chava, Elaine Chen, Isabelle Cordova, and Lucas Varella
+              with the help of WPI Web Tech executives John Dyer, Chris Mercer, and Jake Scheide.
+              Funding for the development of this app was provided by the KEEN Grant.
+            </Text>
+          </ScrollView>
         </View>
       </View>
     );
