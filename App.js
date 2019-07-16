@@ -43,6 +43,7 @@ const WelcomeStackNavigator = new createStackNavigator({
       },
       headerStyle: {
         backgroundColor: '#AC2B37',
+        marginTop: 5,
       },
       headerTintColor: 'white',
     },
@@ -80,6 +81,7 @@ const AboutStackNavigator = new createStackNavigator({
       },
       headerStyle: {
         backgroundColor: '#AC2B37',
+        marginTop: 5,
       },
       headerTintColor: 'white',
     },
@@ -97,6 +99,7 @@ const ProfileStackNavigator = new createStackNavigator({
       },
       headerStyle: {
         backgroundColor: '#AC2B37',
+        marginTop: 5,
       },
       headerTintColor: 'white',
     },
@@ -111,6 +114,7 @@ const ProfileStackNavigator = new createStackNavigator({
       },
       headerStyle: {
         backgroundColor: '#AC2B37',
+        marginTop: 5,
       },
       headerTintColor: 'white',
     },

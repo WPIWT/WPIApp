@@ -1,10 +1,14 @@
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable object-curly-newline */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/prefer-stateless-function */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable global-require */
 import React, { Component } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import { Avatar } from 'react-native-elements';
+import { StyleSheet, Linking, View, Text } from 'react-native';
+import { Avatar, ListItem } from 'react-native-elements';
+import TouchableScale from 'react-native-touchable-scale';
+import { Divider } from 'react-native-paper';
 
 const styles = StyleSheet.create({
   titleText: {
@@ -28,15 +32,26 @@ const styles = StyleSheet.create({
   },
 });
 
-class ProfileScreen extends Component {
-  static navigationOptions = {
-    title: 'WPI',
-    headerStyle: {
-      backgroundColor: '#AC2B37',
-    },
-    headerTintColor: 'white',
-  }
+const list = [
+  {
+    option: 'Change Photo',
+    screen: 'https://laundryconnect.net/wpidaniels.aspx',
+  },
+  {
+    option: 'Privacy Settings',
+    screen: 'https://laundryconnect.net/wpieasthall.aspx',
+  },
+  {
+    option: 'Notification Settings',
+    screen: 'https://laundryconnect.net/wpi16elbridge.aspx',
+  },
+  {
+    option: 'Log Out',
+    screen: 'https://laundryconnect.net/wpiellsworth.aspx',
+  },
+];
 
+class ProfileScreen extends Component {
   render() {
     return (
 
@@ -56,6 +71,21 @@ class ProfileScreen extends Component {
             />
             <Text style={styles.titleText}>this is how lil kids cough</Text>
           </View>
+          <Divider style={{ height: 20, backgroundColor: 'white' }} />
+          {
+            list.map((item, i) => (
+              <ListItem
+                Component={TouchableScale}
+                friction={90}
+                tension={100} // here TouchableScale
+                activeScale={0.95}
+                key={i}
+                title={item.option}
+                onPress={() => Linking.openURL(item.screen)}
+                bottomDivider
+              />
+            ))
+          }
         </View>
       </View>
     );

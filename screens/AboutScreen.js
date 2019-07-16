@@ -4,6 +4,7 @@
 /* eslint-disable global-require */
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { ScrollView } from 'react-native-gesture-handler';
 
 const styles = StyleSheet.create({
@@ -77,10 +78,3 @@ class AboutScreen extends React.Component {
 }
 
 export default AboutScreen;
-
-// The idea for this app was conceived by Sydney Messey, Dennis Leary, and Anika Stundtner
-// through the Stanford University Innovation Fellowship as a means to unite resources in a
-// centralized accessible hub for the WPI community.
-// This app was developed by Manjusha Chava, Elaine Chen, Isabelle Cordova, and Lucas Varella
-// with the help of WPI Web Tech executives John Dyer, Chris Mercer, and Jake Scheide.
-// Funding for the development of this app was provided by the KEEN Grant.
