@@ -4,7 +4,7 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable global-require */
 import React, { Component } from 'react';
-import { View, Linking, ScrollView } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import { ListItem } from 'react-native-elements';
 import TouchableScale from 'react-native-touchable-scale';
 
@@ -78,7 +78,8 @@ class LaundryScreen extends Component {
                 activeScale={0.95}
                 key={i}
                 title={item.title}
-                onPress={() => Linking.openURL(item.link)}
+                onPress={() => this.props.navigation.navigate('LaundryLinks', { link: item.link, name: item.title })}
+                // onPress={() => this.OpenSecondActivity.bind(this, item.link)}
                 topDivider
                 chevron
               />
