@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "WPITest",
-    "slug": "WPITest",
+    "name": "WPIApp",
+    "slug": "WPIApp",
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "platforms": [

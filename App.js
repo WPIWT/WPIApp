@@ -16,10 +16,13 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { Font, AppLoading } from 'expo';
 import { Root } from 'native-base';
 
+
+// Zeroth Level
 import WelcomeScreen from './screens/WelcomeScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import AboutScreen from './screens/AboutScreen';
 
+// First Level
 import StudyScreen from './screens/FirstLevel/StudyScreen';
 import DiningScreen from './screens/FirstLevel/DiningScreen';
 import HelpfulScreen from './screens/FirstLevel/HelpfulScreen';
@@ -31,6 +34,9 @@ import HoursScreen from './screens/FirstLevel/HoursScreen';
 import CatalogueScreen from './screens/FirstLevel/CatalogueScreen';
 import QRCodeScreen from './screens/FirstLevel/QRCodeScreen';
 import CampusMap from './screens/FirstLevel/CampusMap';
+
+// Second Level
+import LaundryLinks from './screens/SecondLevel/LaundryLinks';
 
 const WelcomeStackNavigator = new createStackNavigator({
   WelcomeScreen: {
@@ -64,6 +70,12 @@ const WelcomeStackNavigator = new createStackNavigator({
   },
   CampusMap: { // 10
     screen: CampusMap,
+    navigationOptions: {
+      header: null,
+    },
+  },
+  LaundryLinks: { // 11
+    screen: LaundryLinks,
     navigationOptions: {
       header: null,
     },
