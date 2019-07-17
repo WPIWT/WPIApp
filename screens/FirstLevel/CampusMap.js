@@ -21,11 +21,9 @@ export default class CampusMap extends React.Component {
     return (
       <View style={styles.container}>
         <PDFReader
-          source={{ uri: 'https://web.wpi.edu/Images/CMS/University-About/UGAdm_Map_2016_Front_no_crop.pdf' }}
+          source={{ uri: 'https://web.wpi.edu/Images/CMS/Police/ParkingMap.pdf' }}
         />
       </View>
     );
   }
 }
-
-// http://samples.leanpub.com/thereactnativebook-sample.pdf'
