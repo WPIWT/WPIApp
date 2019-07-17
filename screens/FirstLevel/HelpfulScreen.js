@@ -1,11 +1,13 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable react/prefer-stateless-function */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable global-require */
 import React, { Component } from 'react';
-import { View, Linking, ScrollView } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import { ListItem } from 'react-native-elements';
 import TouchableScale from 'react-native-touchable-scale';
+
 
 const list = [
   {
@@ -48,7 +50,7 @@ const list = [
 
 class HelpfulScreen extends Component {
   static navigationOptions = {
-    title: 'Helpful Links',
+    title: 'Helpful Screen',
     headerStyle: {
       backgroundColor: '#AC2B37',
     },
@@ -68,7 +70,7 @@ class HelpfulScreen extends Component {
                 activeScale={0.95}
                 key={i}
                 title={item.title}
-                onPress={() => Linking.openURL(item.link)}
+                onPress={() => this.props.navigation.navigate('HelpfulLinks', { link: item.link, name: item.title })}
                 topDivider
                 chevron
               />

@@ -79,7 +79,6 @@ class LaundryScreen extends Component {
                 key={i}
                 title={item.title}
                 onPress={() => this.props.navigation.navigate('LaundryLinks', { link: item.link, name: item.title })}
-                // onPress={() => this.OpenSecondActivity.bind(this, item.link)}
                 topDivider
                 chevron
               />

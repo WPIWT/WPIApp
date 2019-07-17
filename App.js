@@ -37,6 +37,7 @@ import CampusMap from './screens/FirstLevel/CampusMap';
 
 // Second Level
 import LaundryLinks from './screens/SecondLevel/LaundryLinks';
+import HelpfulLinks from './screens/SecondLevel/HelpfulLinks';
 
 const WelcomeStackNavigator = new createStackNavigator({
   WelcomeScreen: {
@@ -76,6 +77,12 @@ const WelcomeStackNavigator = new createStackNavigator({
   },
   LaundryLinks: { // 11
     screen: LaundryLinks,
+    navigationOptions: {
+      header: null,
+    },
+  },
+  HelpfulLinks: { // 12
+    screen: HelpfulLinks,
     navigationOptions: {
       header: null,
     },
