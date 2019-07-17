@@ -4,6 +4,7 @@
 /* eslint-disable react/prefer-stateless-function */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable global-require */
+/* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
 import { StyleSheet, Linking, View, Text } from 'react-native';
 import { Avatar, ListItem } from 'react-native-elements';
@@ -81,7 +82,7 @@ class ProfileScreen extends Component {
                 activeScale={0.95}
                 key={i}
                 title={item.option}
-                onPress={() => Linking.openURL(item.screen)}
+               // onPress={Linking.openURL(item.screen)}
                 bottomDivider
               />
             ))

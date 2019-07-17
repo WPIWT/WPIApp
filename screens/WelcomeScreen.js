@@ -11,7 +11,7 @@
 
 import React, { Component } from 'react';
 import {
-  StyleSheet, View, Button, ScrollView, Image, TouchableOpacity, Linking, StatusBar,
+  StyleSheet, View, Button, ScrollView, Image, TouchableOpacity, Linking, StatusBar, WebView,
 } from 'react-native';
 
 import { Text, Card, Divider } from 'react-native-elements';
