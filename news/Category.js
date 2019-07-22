@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/prefer-stateless-function */
@@ -9,19 +10,49 @@ import {
   Image,
 } from 'react-native';
 
+import { Font, AppLoading } from 'expo';
+import { Root } from 'native-base';
+
 const styles = StyleSheet.create({
   container: {
-    height: 130,
+    height: 150,
     width: 200,
     marginLeft: 20,
     borderWidth: 1,
-    borderColor: '#000000',
+    borderColor: '#E8E8E8',
     borderRadius: 5,
+  },
+  text: {
+    fontFamily: 'MyriadPro-Regular',
+    fontSize: 16,
   },
 });
 
-class Category extends Component {
+export default class Category extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { loading: true };
+  }
+
+  async componentDidMount() {
+    await Font.loadAsync({
+      'MinionPro-BoldDisp': require('../assets/fonts/MinionPro-BoldDisp.ttf'),
+      'MyriadPro-Light': require('../assets/fonts/MyriadPro-Light.ttf'),
+      'MyriadPro-Regular': require('../assets/fonts/MyriadPro-Regular.ttf'),
+      'MyriadPro-Bold': require('../assets/fonts/MyriadPro-Bold.ttf'),
+      'SpaceMono-Regular': require('../assets/fonts/SpaceMono-Regular.ttf'),
+    });
+    this.setState({ loading: false });
+  }
+
   render() {
+    if (this.state.loading) {
+      return (
+        <Root>
+          <AppLoading />
+        </Root>
+      );
+    }
     return (
       <View style={styles.container}>
         <View style={{ flex: 2 }}>
@@ -31,13 +62,14 @@ class Category extends Component {
               flex: 4, width: null, height: null, resizeMode: 'cover',
             }}
           />
-          <View style={{ flex: 1, paddingLeft: 10, paddingTop: 10 }}>
-            <Text>{this.props.name}</Text>
+          <View style={{
+            flex: 1, paddingLeft: 10, paddingTop: 10, paddingBottom: 10, flexWrap: 'wrap',
+          }}
+          >
+            <Text style={styles.text}>{this.props.name}</Text>
           </View>
         </View>
       </View>
     );
   }
 }
-
-export default Category;
