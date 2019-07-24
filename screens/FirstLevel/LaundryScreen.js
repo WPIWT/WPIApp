@@ -5,9 +5,8 @@
 /* eslint-disable global-require */
 import React, { Component } from 'react';
 import { View, ScrollView } from 'react-native';
-import { ListItem } from 'react-native-elements';
+import { ListItem, SearchBar } from 'react-native-elements';
 import TouchableScale from 'react-native-touchable-scale';
-
 
 const list = [
   {
@@ -65,9 +64,29 @@ class LaundryScreen extends Component {
     headerTintColor: 'white',
   };
 
+  state = {
+    search: '',
+  };
+
+  updateSearch = (search) => {
+    this.setState({ search });
+  };
+
   render() {
+    const { search } = this.state;
     return (
       <View>
+        <SearchBar
+          platform="ios"
+          placeholder="Search"
+          onChangeText={this.updateSearch}
+          inputContainerStyle={{ backgroundColor: '#F8F8F8' }}
+          value={search}
+          lightTheme
+          containerStyle={{ backgroundColor: 'white' }}
+          round
+          cancelIcon={false}
+        />
         <ScrollView>
           {
             list.map((item, i) => (
