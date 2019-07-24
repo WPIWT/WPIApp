@@ -15,7 +15,7 @@ import { Root } from 'native-base';
 
 const styles = StyleSheet.create({
   container: {
-    height: 150,
+    height: 140,
     width: 200,
     marginLeft: 20,
     borderWidth: 1,
@@ -59,14 +59,16 @@ export default class Category extends Component {
           <Image
             source={this.props.imageUri}
             style={{
-              flex: 4, width: null, height: null, resizeMode: 'cover',
+              flex: 4, width: null, height: null, resizeMode: 'cover', borderRadius: 5, overflow: 'hidden', alignContent: 'center',
             }}
           />
           <View style={{
-            flex: 1, paddingLeft: 10, paddingTop: 10, paddingBottom: 10, flexWrap: 'wrap',
+            flex: 1, paddingLeft: 10, paddingTop: 10, paddingBottom: 5, flexWrap: 'wrap',
           }}
           >
-            <Text style={styles.text}>{this.props.name}</Text>
+            <Text style={styles.text}>
+              {this.props.name}
+            </Text>
           </View>
         </View>
       </View>

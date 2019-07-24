@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   },
   buttonFirstRow: {
     flex: 1,
-    marginTop: 25,
+    marginTop: 15,
     marginLeft: 20,
     marginRight: 20,
     flexDirection: 'row',
@@ -132,29 +132,29 @@ export default class WelcomeScreen extends Component {
     return (
       <View style={styles.container}>
         <ScrollView>
-          <View style={{ height: 130, marginTop: 30 }}>
+          <View style={{ height: 150, marginTop: 20 }}>
             <ScrollView
               horizontal={true}
             >
               <Category
-                imageUri={require('../assets/images/robot-dev.png')}
-                name="Robot"
+                imageUri={require('../assets/images/Worcester.jpg')}
+                name="Welcome to Worcester!"
               />
               <Category
-                imageUri={require('../assets/images/robot-dev.png')}
-                name="Robot 1"
+                imageUri={require('../assets/images/OutsideFoisie.jpg')}
+                name="New Foisie Innovation Center"
               />
               <Category
-                imageUri={require('../assets/images/robot-dev.png')}
-                name="Robot 2"
+                imageUri={require('../assets/images/helpful.jpg')}
+                name="New Students Orientation"
               />
               <Category
-                imageUri={require('../assets/images/robot-dev.png')}
-                name="Robot 3"
+                imageUri={require('../assets/images/OutsideGordonLibrary.jpg')}
+                name="Meet Gordon Library"
               />
               <Category
-                imageUri={require('../assets/images/robot-dev.png')}
-                name="Robot 4"
+                imageUri={require('../assets/images/CampusQuad.jpg')}
+                name="Activities on the Quad"
               />
             </ScrollView>
           </View>

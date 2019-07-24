@@ -4,15 +4,19 @@
 /* eslint-disable global-require */
 import React, { Component } from 'react';
 import {
-  StyleSheet, View, Image, TouchableOpacity,
+  StyleSheet, View, TouchableOpacity,
 } from 'react-native';
 import { Text, Card, Divider } from 'react-native-elements';
+import { Right, Body } from 'native-base';
 
 const styles = StyleSheet.create({
   card: {
     backgroundColor: '#fff',
     borderWidth: 0,
     borderRadius: 20,
+    shadowColor: '#585858',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.4,
   },
   name: {
     fontSize: 22,
@@ -55,9 +59,17 @@ class DiningScreen extends Component {
       >
         <Card containerStyle={styles.card}>
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-            <Image style={{ width: 150, height: 100, borderRadius: 5 }} source={{ uri: 'https://i.kym-cdn.com/photos/images/newsfeed/001/439/881/ed5.png' }} />
-            <Text style={styles.name}>   Pulse on Dining </Text>
+            <Text style={styles.name}>Pulse on Dining</Text>
+            <Text note>OPEN</Text>
+            <Text note>11-2 | 5-8</Text>
           </View>
+          <Right>
+            <Body>
+              <Text style={styles.name}>Pulse on Dining</Text>
+              <Text style={{ color: 'green' }} note>OPEN</Text>
+              <Text style={{ color: '#989898' }} note>11-2 | 5-8</Text>
+            </Body>
+          </Right>
 
           <Divider style={{ backgroundColor: '#000', marginVertical: 20 }} />
 
