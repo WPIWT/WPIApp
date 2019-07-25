@@ -15,6 +15,7 @@ import { createMaterialBottomTabNavigator } from 'react-navigation-material-bott
 import Icon from 'react-native-vector-icons/Ionicons';
 import { Font, AppLoading } from 'expo';
 import { Root } from 'native-base';
+import { MaterialIcons } from '@expo/vector-icons';
 
 
 // Zeroth Level
@@ -88,12 +89,6 @@ const WelcomeStackNavigator = new createStackNavigator({
       header: null,
     },
   },
-  AboutScreen: { // 13
-    screen: AboutScreen,
-    navigationOptions: {
-      title: 'About',
-    },
-  },
 });
 
 const MoreStackNavigator = new createStackNavigator({
@@ -105,6 +100,17 @@ const MoreStackNavigator = new createStackNavigator({
         fontFamily: 'MinionPro-BoldDisp',
         fontSize: 30,
       },
+      headerStyle: {
+        backgroundColor: '#AC2B37',
+        marginTop: 5,
+      },
+      headerTintColor: 'white',
+    },
+  },
+  AboutScreen: {
+    screen: AboutScreen,
+    navigationOptions: {
+      title: 'About',
       headerStyle: {
         backgroundColor: '#AC2B37',
         marginTop: 5,

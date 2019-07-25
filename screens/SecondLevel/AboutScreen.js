@@ -3,6 +3,7 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable global-require */
 /* eslint-disable react/prop-types */
+/* eslint-disable object-curly-newline */
 import React from 'react';
 import {
   StyleSheet, Text, View, Image, TouchableOpacity,
@@ -29,6 +30,7 @@ const styles = StyleSheet.create({
   },
   image: {
     alignItems: 'center',
+    backgroundColor: '#F8F8F8',
   },
   divContainer: {
     marginTop: 0,
@@ -49,13 +51,18 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    textAlign: 'center',
   },
   header2: {
     fontFamily: 'MyriadPro-Bold',
     fontSize: 20,
     color: 'black',
     textAlign: 'center',
+  },
+  header3: {
+    fontFamily: 'MyriadPro-Light',
+    fontSize: 16,
+    color: 'black',
+    textAlign: 'left',
   },
   avatarContainer: {
     flex: 1,
@@ -125,43 +132,14 @@ class AboutScreen extends React.Component {
     return (
       <View style={styles.container}>
         <ScrollView>
-          <View style={styles.image}>
-            <Image
-              style={{ marginTop: 30, width: 140, height: 140 }}
-              source={require('../../assets/images/WPI_logo.png')}
-            />
-          </View>
           <View style={styles.paragraph}>
-            <Text style={styles.paraText}>
-              The idea for this app was conceived by Sydney Messey, Dennis Leary, and Anika Stundtner
-            </Text>
-            <Divider style={{ backgroundColor: 'white', marginVertical: 0 }} />
-            <Text style={styles.paraText}>
-              through the Stanford University Innovation Fellowship.
-            </Text>
-            <Divider style={{ backgroundColor: 'white', marginVertical: 20 }} />
-            <Text style={styles.paraText}>
-              This app was developed by
-            </Text>
-            <Divider style={{ backgroundColor: 'white', marginVertical: 0 }} />
-            <Text style={styles.paraText}>
-              Manjusha Chava, Elaine Chen, Isabelle Cordova,
-            </Text>
-            <Divider style={{ backgroundColor: 'white', marginVertical: 0 }} />
-            <Text style={styles.paraText}>
-              and Lucas Varella with the help of WPI Web Tech
-            </Text>
-            <Text style={styles.paraText}>
-              executives John Dyer, Chris Mercer, and Jake Scheide.
-            </Text>
-            <Divider style={{ backgroundColor: 'white', marginVertical: 20 }} />
-            <Text style={{ fontSize: 13, fontFamily: 'MyriadPro-Light', textAlign: 'center' }}>
-              Funding for the development of this app was provided by the KEEN Grant.
-            </Text>
-
-            <Divider style={{ backgroundColor: 'white', marginVertical: 20 }} />
+            <Divider style={{ backgroundColor: 'white', marginVertical: 2 }} />
             <Text style={styles.header2}>
               Meet the Team!
+            </Text>
+            <Divider style={{ backgroundColor: 'white', marginVertical: 15 }} />
+            <Text style={styles.header3}>
+              University Innovation Fellows
             </Text>
           </View>
 
@@ -209,6 +187,12 @@ class AboutScreen extends React.Component {
             </TouchableOpacity>
           </View>
 
+          <View style={styles.paragraph}>
+            <Divider style={{ backgroundColor: 'white', marginVertical: 5 }} />
+            <Text style={styles.header3}>
+              Developers
+            </Text>
+          </View>
           <View style={styles.avatarContainer}>
             <TouchableOpacity>
               <View style={styles.buttonContainer}>
@@ -253,7 +237,7 @@ class AboutScreen extends React.Component {
             </TouchableOpacity>
           </View>
 
-          <View style={styles.avatarContainer}>
+          <View style={styles.lastAvatar}>
             <TouchableOpacity>
               <View style={styles.buttonContainer}>
                 <Avatar
@@ -265,6 +249,28 @@ class AboutScreen extends React.Component {
                 />
                 <Divider style={{ height: 10, backgroundColor: 'white' }} />
                 <Text style={styles.avatarText}>Lucas Varella</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+
+          <View style={styles.paragraph}>
+            <Divider style={{ backgroundColor: 'white', marginVertical: 5 }} />
+            <Text style={styles.header3}>
+              WebTech Executives
+            </Text>
+          </View>
+          <View style={styles.avatarContainer}>
+            <TouchableOpacity>
+              <View style={styles.buttonContainer}>
+                <Avatar
+                  source={require('../../assets/teamPics/JohnDyer.jpg')}
+                  size="large"
+                  rounded
+                  title="JD"
+                  activeOpacity={1}
+                />
+                <Divider style={{ height: 10, backgroundColor: 'white' }} />
+                <Text style={styles.avatarText}>John Dyer</Text>
               </View>
             </TouchableOpacity>
 
@@ -281,30 +287,6 @@ class AboutScreen extends React.Component {
                 <Text style={styles.avatarText}>Chris Mercer</Text>
               </View>
             </TouchableOpacity>
-
-            <TouchableOpacity>
-              <View style={styles.buttonContainer}>
-                <Avatar
-                  source={require('../../assets/teamPics/JohnDyer.jpg')}
-                  size="large"
-                  rounded
-                  title="JD"
-                  activeOpacity={1}
-                />
-                <Divider style={{ height: 10, backgroundColor: 'white' }} />
-                <Text style={styles.avatarText}>John Dyer</Text>
-              </View>
-            </TouchableOpacity>
-          </View>
-
-          <View>
-            <Divider style={{ backgroundColor: 'white', marginVertical: 10 }} />
-            <Text style={styles.header2}>
-              Our Alumni!
-            </Text>
-          </View>
-
-          <View style={styles.lastAvatar}>
             <TouchableOpacity>
               <View style={styles.buttonContainer}>
                 <Avatar
@@ -318,7 +300,18 @@ class AboutScreen extends React.Component {
                 <Text style={styles.avatarText}>Jake Scheide</Text>
               </View>
             </TouchableOpacity>
-            <Divider style={{ backgroundColor: 'white', marginVertical: 10 }} />
+          </View>
+          <Divider style={{ backgroundColor: 'white', marginVertical: 15 }} />
+          <View style={styles.image}>
+            <Image
+              style={{ marginTop: 30, width: 140, height: 140 }}
+              source={require('../../assets/images/WPI_logo.png')}
+            />
+            <Divider style={{ backgroundColor: '#F8F8F8', marginVertical: 10 }} />
+            <Text style={{ fontSize: 14, fontFamily: 'MyriadPro-Light', textAlign: 'center', marginLeft: 10, marginRight: 10 }}>
+              Funding for the development of this app was provided by the KEEN Grant.
+            </Text>
+            <Divider style={{ backgroundColor: '#F8F8F8', marginVertical: 25 }} />
           </View>
         </ScrollView>
       </View>
