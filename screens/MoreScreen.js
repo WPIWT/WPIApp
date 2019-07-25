@@ -51,7 +51,6 @@ class MoreScreen extends Component {
                 title={item.title}
                 onPress={() => this.props.navigation.navigate('AboutScreen')}
                 topDivider
-                bottomDivider
                 leftIcon={<MaterialIcons name={item.icon} size={42} style={{ marginRight: 10 }} color="#ACB2B7" />}
                 chevron
               />

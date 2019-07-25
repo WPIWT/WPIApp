@@ -20,7 +20,6 @@ import { Root } from 'native-base';
 // Zeroth Level
 import WelcomeScreen from './screens/WelcomeScreen';
 import ProfileScreen from './screens/ProfileScreen';
-import AboutScreen from './screens/AboutScreen';
 import MoreScreen from './screens/MoreScreen';
 
 // First Level
@@ -39,6 +38,7 @@ import CampusMap from './screens/FirstLevel/CampusMap';
 // Second Level
 import LaundryLinks from './screens/SecondLevel/LaundryLinks';
 import HelpfulLinks from './screens/SecondLevel/HelpfulLinks';
+import AboutScreen from './screens/SecondLevel/AboutScreen';
 
 const WelcomeStackNavigator = new createStackNavigator({
   WelcomeScreen: {
@@ -88,23 +88,10 @@ const WelcomeStackNavigator = new createStackNavigator({
       header: null,
     },
   },
-  AboutScreen: { screen: AboutScreen },
-});
-
-const AboutStackNavigator = new createStackNavigator({
-  AboutScreen: {
+  AboutScreen: { // 13
     screen: AboutScreen,
     navigationOptions: {
-      title: 'WPI',
-      headerTitleStyle: {
-        fontFamily: 'MinionPro-BoldDisp',
-        fontSize: 30,
-      },
-      headerStyle: {
-        backgroundColor: '#AC2B37',
-        marginTop: 5,
-      },
-      headerTintColor: 'white',
+      title: 'About',
     },
   },
 });
