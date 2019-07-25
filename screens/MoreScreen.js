@@ -17,7 +17,7 @@ const list = [
   },
   {
     title: 'WPI Contacts',
-    page: 'AboutScreen',
+    page: 'EmcScreen',
     icon: 'contact-phone',
   },
   {
@@ -49,7 +49,7 @@ class MoreScreen extends Component {
                 activeScale={0.95}
                 key={i}
                 title={item.title}
-                onPress={() => this.props.navigation.navigate('AboutScreen')}
+                onPress={() => this.props.navigation.navigate(item.page)}
                 topDivider
                 leftIcon={<MaterialIcons name={item.icon} size={42} style={{ marginRight: 10 }} color="#ACB2B7" />}
                 chevron

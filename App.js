@@ -40,6 +40,7 @@ import CampusMap from './screens/FirstLevel/CampusMap';
 import LaundryLinks from './screens/SecondLevel/LaundryLinks';
 import HelpfulLinks from './screens/SecondLevel/HelpfulLinks';
 import AboutScreen from './screens/SecondLevel/AboutScreen';
+import EmcScreen from './screens/SecondLevel/EmcScreen';
 
 const WelcomeStackNavigator = new createStackNavigator({
   WelcomeScreen: {
@@ -111,6 +112,17 @@ const MoreStackNavigator = new createStackNavigator({
     screen: AboutScreen,
     navigationOptions: {
       title: 'About',
+      headerStyle: {
+        backgroundColor: '#AC2B37',
+        marginTop: 5,
+      },
+      headerTintColor: 'white',
+    },
+  },
+  EmcScreen: {
+    screen: EmcScreen,
+    navigationOptions: {
+      title: 'WPI Contacts',
       headerStyle: {
         backgroundColor: '#AC2B37',
         marginTop: 5,
