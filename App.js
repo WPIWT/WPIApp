@@ -21,6 +21,7 @@ import { Root } from 'native-base';
 import WelcomeScreen from './screens/WelcomeScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import AboutScreen from './screens/AboutScreen';
+import MoreScreen from './screens/MoreScreen';
 
 // First Level
 import StudyScreen from './screens/FirstLevel/StudyScreen';
@@ -87,11 +88,30 @@ const WelcomeStackNavigator = new createStackNavigator({
       header: null,
     },
   },
+  AboutScreen: { screen: AboutScreen },
 });
 
 const AboutStackNavigator = new createStackNavigator({
   AboutScreen: {
     screen: AboutScreen,
+    navigationOptions: {
+      title: 'WPI',
+      headerTitleStyle: {
+        fontFamily: 'MinionPro-BoldDisp',
+        fontSize: 30,
+      },
+      headerStyle: {
+        backgroundColor: '#AC2B37',
+        marginTop: 5,
+      },
+      headerTintColor: 'white',
+    },
+  },
+});
+
+const MoreStackNavigator = new createStackNavigator({
+  MoreScreen: {
+    screen: MoreScreen,
     navigationOptions: {
       title: 'WPI',
       headerTitleStyle: {
@@ -142,13 +162,13 @@ const ProfileStackNavigator = new createStackNavigator({
 
 const TabNavigator = createMaterialBottomTabNavigator(
   {
-    About: {
-      screen: AboutStackNavigator,
+    MoreScreen: {
+      screen: MoreStackNavigator,
       navigationOptions: {
-        tabBarLabel: 'About',
+        tabBarLabel: 'More',
         tabBarIcon: ({ tintColor }) => (
           <View>
-            <Icon style={[{ color: tintColor }]} size={25} name="ios-information-circle-outline" />
+            <Icon style={[{ color: tintColor }]} size={25} name="ios-more" />
           </View>
         ),
         activeColor: '#AC2B37',

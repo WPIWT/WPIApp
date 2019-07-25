@@ -1,105 +1,66 @@
-/* eslint-disable max-len */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable react/prefer-stateless-function */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable global-require */
-import React from 'react';
-import {
-  StyleSheet, Text, View, SectionList,
-} from 'react-native';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { ScrollView } from 'react-native-gesture-handler';
-import { Font, AppLoading } from 'expo';
-import { Root } from 'native-base';
+import React, { Component } from 'react';
+import { View, ScrollView } from 'react-native';
+import { ListItem } from 'react-native-elements';
+import TouchableScale from 'react-native-touchable-scale';
+import { MaterialIcons } from '@expo/vector-icons';
 
-const styles = StyleSheet.create({
-  title: {
-    fontFamily: 'MyriadPro-Bold',
-    alignContent: 'space-between',
-    justifyContent: 'center',
-    alignItems: 'center',
+const list = [
+  {
+    title: 'Login',
+    page: 'AboutScreen',
+    icon: 'lock',
   },
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
+  {
+    title: 'WPI Contacts',
+    page: 'AboutScreen',
+    icon: 'contact-phone',
   },
-  SectionHeader: {
-    backgroundColor: '#A9B0B7',
-    fontSize: 20,
-    height: 40,
-    padding: 10,
-    fontFamily: 'MyriadPro-Bold',
-    color: '#fff',
+  {
+    title: 'About',
+    page: 'AboutScreen',
+    icon: 'info',
   },
-  SectionListItem: {
-    fontSize: 18,
-    padding: 12,
-    color: '#000',
-    backgroundColor: '#fff',
-    fontFamily: 'MyriadPro-Regular',
-  },
-});
+];
 
-class MoreScreen extends React.Component {
-  static navigationOptions = {
-    title: 'WPI',
-    headerStyle: {
-      backgroundColor: '#AC2B37',
-    },
-    headerTintColor: 'white',
-  }
+class MoreScreen extends Component {
+    static navigationOptions = {
+      title: 'WPI',
+      headerStyle: {
+        backgroundColor: '#AC2B37',
+      },
+      headerTintColor: 'white',
+    }
 
-  constructor(props) {
-    super(props);
-    this.state = { loading: true };
-  }
-
-  async componentDidMount() {
-    await Font.loadAsync({
-      'MinionPro-BoldDisp': require('../assets/fonts/MinionPro-BoldDisp.ttf'),
-      'MyriadPro-Light': require('../assets/fonts/MyriadPro-Light.ttf'),
-      'MyriadPro-Regular': require('../assets/fonts/MyriadPro-Regular.ttf'),
-      'MyriadPro-Bold': require('../assets/fonts/MyriadPro-Bold.ttf'),
-      'SpaceMono-Regular': require('../assets/fonts/SpaceMono-Regular.ttf'),
-    });
-    this.setState({ loading: false });
-  }
-
-  render() {
-    if (this.state.loading) {
+    render() {
       return (
-        <Root>
-          <AppLoading />
-        </Root>
+        <View>
+          <ScrollView>
+            {
+            list.map((item, i) => (
+              <ListItem
+                Component={TouchableScale}
+                friction={90}
+                tension={100} // here TouchableScale
+                activeScale={0.95}
+                key={i}
+                title={item.title}
+                onPress={() => this.props.navigation.navigate('AboutScreen')}
+                topDivider
+                bottomDivider
+                leftIcon={<MaterialIcons name={item.icon} size={42} style={{ marginRight: 10 }} color="#ACB2B7" />}
+                chevron
+              />
+            ))
+          }
+          </ScrollView>
+        </View>
       );
     }
-    return (
-      <View style={styles.container}>
-        <ScrollView>
-          <SectionList
-            sections={[
-              { title: 'Account', data: ['Login'] },
-              { title: 'Features', data: ['About', 'Emergency Contacts', 'Report Bugs'] },
-            ]}
-            renderSectionHeader={({ section }) => (
-              <Text style={styles.SectionHeader}>
-                {' '}
-                { section.title }
-                {' '}
-              </Text>
-            )}
-            renderItem={({ item }) => (
-              <Text style={styles.SectionListItem}>
-                {' '}
-                { item }
-                {' '}
-              </Text>
-            )}
-            keyExtractor={(item, index) => index}
-          />
-        </ScrollView>
-      </View>
-    );
-  }
 }
 
 export default MoreScreen;
