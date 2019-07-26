@@ -7,7 +7,8 @@ import {
   StyleSheet, View, TouchableOpacity,
 } from 'react-native';
 import { Text, Card, Divider } from 'react-native-elements';
-import { Right, Body } from 'native-base';
+import { Right, Body, Root } from 'native-base';
+import { Font, AppLoading } from 'expo';
 
 const styles = StyleSheet.create({
   card: {
@@ -22,24 +23,29 @@ const styles = StyleSheet.create({
     fontSize: 22,
     color: '#989898',
     textTransform: 'capitalize',
+    fontFamily: 'MyriadPro-Regular',
   },
   status: {
     fontSize: 18,
     color: '#A2D602',
     textTransform: 'uppercase',
+    fontFamily: 'MyriadPro-Regular',
   },
   hours: {
     fontSize: 18,
     color: '#989898',
+    fontFamily: 'MyriadPro-Regular',
   },
   time: {
     fontSize: 38,
     color: '#989898',
+    fontFamily: 'MyriadPro-Regular',
   },
   notes: {
     fontSize: 18,
     color: '#989898',
     textTransform: 'capitalize',
+    fontFamily: 'MyriadPro-Regular',
   },
 });
 
@@ -52,7 +58,29 @@ class DiningScreen extends Component {
     headerTintColor: 'white',
   };
 
+  constructor(props) {
+    super(props);
+    this.state = { loading: true };
+  }
+
+  async componentDidMount() {
+    await Font.loadAsync({
+      'MinionPro-BoldDisp': require('../../assets/fonts/MinionPro-BoldDisp.ttf'),
+      'MyriadPro-Light': require('../../assets/fonts/MyriadPro-Light.ttf'),
+      'MyriadPro-Regular': require('../../assets/fonts/MyriadPro-Regular.ttf'),
+      'MyriadPro-Bold': require('../../assets/fonts/MyriadPro-Bold.ttf'),
+    });
+    this.setState({ loading: false });
+  }
+
   render() {
+    if (this.state.loading) {
+      return (
+        <Root>
+          <AppLoading />
+        </Root>
+      );
+    }
     return (
       <TouchableOpacity
         onPress={() => this.props.navigation.navigate('CalendarScreen')}
@@ -64,7 +92,7 @@ class DiningScreen extends Component {
             <Text note>11-2 | 5-8</Text>
           </View>
           <Right>
-            <Body>
+            <Body style={{ }}>
               <Text style={styles.name}>Pulse on Dining</Text>
               <Text style={{ color: 'green' }} note>OPEN</Text>
               <Text style={{ color: '#989898' }} note>11-2 | 5-8</Text>
