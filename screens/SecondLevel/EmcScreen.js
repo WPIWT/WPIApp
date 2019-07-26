@@ -17,6 +17,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#ACB2B7',
     height: 45,
     textAlignVertical: 'center',
+    justifyContent: 'center', // Centered vertically
+    flex: 1,
   },
   headerText: {
     color: 'white',
@@ -27,6 +29,7 @@ const styles = StyleSheet.create({
     fontFamily: 'MyriadPro-Bold',
     textAlignVertical: 'center',
     alignItems: 'center',
+    marginTop: 5,
   },
 });
 
@@ -47,11 +50,12 @@ const police = [
 
 class EmcScreen extends Component {
     static navigationOptions = {
-      title: 'WPI',
+      title: 'Back',
       headerStyle: {
         backgroundColor: '#AC2B37',
       },
       headerTintColor: 'white',
+      headerBackTitle: null,
     }
 
     constructor(props) {

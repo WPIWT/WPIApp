@@ -8,14 +8,14 @@
 /* eslint-disable react/prefer-stateless-function */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable global-require */
+/* eslint-disable no-undef */
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { createStackNavigator, createAppContainer, HeaderBackButton } from 'react-navigation';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { Font, AppLoading } from 'expo';
 import { Root } from 'native-base';
-import { MaterialIcons } from '@expo/vector-icons';
 
 
 // Zeroth Level
@@ -58,14 +58,54 @@ const WelcomeStackNavigator = new createStackNavigator({
       headerTintColor: 'white',
     },
   },
-  StudyScreen: { screen: StudyScreen }, // 1
-  DiningScreen: { screen: DiningScreen }, // 2
-  HelpfulScreen: { screen: HelpfulScreen }, // 3
-  CalendarScreen: { screen: CalendarScreen }, // 4
-  BookingScreen: { screen: BookingScreen }, // 5
-  LaundryScreen: { screen: LaundryScreen }, // 6
-  ClubScreen: { screen: ClubScreen }, // 7
-  HoursScreen: { screen: HoursScreen }, // 8
+  StudyScreen: {
+    screen: StudyScreen,
+    navigationOptions: {
+      headerLeft: <HeaderBackButton onPress={() => navigation.goBack(null)} tintColor="white" />,
+    },
+  }, // 1
+  DiningScreen: {
+    screen: DiningScreen,
+    navigationOptions: {
+      headerLeft: <HeaderBackButton onPress={() => navigation.goBack(null)} tintColor="white" />,
+    },
+  }, // 2
+  HelpfulScreen: {
+    screen: HelpfulLinks,
+    navigationOptions: {
+      headerLeft: <HeaderBackButton onPress={() => navigation.goBack(null)} tintColor="white" />,
+    },
+  }, // 3
+  CalendarScreen: {
+    screen: CalendarScreen,
+    navigationOptions: {
+      headerLeft: <HeaderBackButton onPress={() => navigation.goBack(null)} tintColor="white" />,
+    },
+  }, // 4
+  BookingScreen: {
+    screen: BookingScreen,
+    navigationOptions: {
+      headerLeft: <HeaderBackButton onPress={() => navigation.goBack(null)} tintColor="white" />,
+    },
+  }, // 5
+  LaundryScreen: {
+    screen: LaundryScreen,
+    navigationOptions: {
+      headerLeft: <HeaderBackButton onPress={() => navigation.goBack(null)} tintColor="white" />,
+    },
+  }, // 6
+  ClubScreen: {
+    screen: ClubScreen,
+    navigationOptions: {
+      headerLeft: <HeaderBackButton onPress={() => navigation.goBack(null)} tintColor="white" />,
+    },
+  }, // 7
+  HoursScreen: {
+    screen: HoursScreen,
+    navigationOptions: {
+      headerLeft: <HeaderBackButton onPress={() => navigation.goBack(null)} tintColor="white" />,
+    },
+  }, // 8
   CatalogueScreen: { // 9
     screen: CatalogueScreen,
     navigationOptions: {
@@ -117,6 +157,7 @@ const MoreStackNavigator = new createStackNavigator({
         marginTop: 5,
       },
       headerTintColor: 'white',
+      headerLeft: <HeaderBackButton onPress={() => navigation.goBack(null)} tintColor="white" />,
     },
   },
   EmcScreen: {
@@ -127,6 +168,7 @@ const MoreStackNavigator = new createStackNavigator({
         backgroundColor: '#AC2B37',
         marginTop: 5,
       },
+      headerLeft: <HeaderBackButton onPress={() => navigation.goBack(null)} tintColor="white" />,
       headerTintColor: 'white',
     },
   },
@@ -161,6 +203,7 @@ const ProfileStackNavigator = new createStackNavigator({
         marginTop: 5,
       },
       headerTintColor: 'white',
+      headerLeft: <HeaderBackButton onPress={() => navigation.goBack(null)} tintColor="white" />,
     },
   },
 });
