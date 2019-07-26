@@ -11,6 +11,7 @@ import TouchableScale from 'react-native-touchable-scale';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Font, AppLoading } from 'expo';
 import { Root } from 'native-base';
+import { Collapse, CollapseBody } from 'accordion-collapse-react-native/lib';
 
 const styles = StyleSheet.create({
   header: {
@@ -30,21 +31,71 @@ const styles = StyleSheet.create({
     textAlignVertical: 'center',
     alignItems: 'center',
     marginTop: 5,
+    textTransform: 'capitalize',
   },
 });
 
-const police = [
+const campusPolice = [
   {
-    title: 'Login',
-    phone: '978-677-8867',
+    title: 'WPI Police (Emergency)',
+    phone: '5088315555',
   },
   {
-    title: 'WPI Contacts',
-    phone: '978-677-8867',
+    title: 'WPI Police (Non-Emergency)',
+    phone: '5087998600',
   },
   {
-    title: 'About',
-    phone: '978-677-8867',
+    title: 'WPI Campus Police',
+    phone: '5088315433',
+  },
+];
+
+const medicalAssistance = [
+  {
+    title: 'WPI Health Services',
+    phone: '5088315520',
+  },
+  {
+    title: 'St. Vincent Hospital',
+    phone: '5083635000',
+  },
+  {
+    title: 'UMass Memorial Medical Center',
+    phone: '5083341000',
+  },
+  {
+    title: 'AdCare Hospital',
+    phone: '5087999000',
+  },
+];
+
+const crisisHelp = [
+  {
+    title: 'WPI Student Development and Counseling Center',
+    phone: '5088315540',
+  },
+  {
+    title: 'Pathways for Change',
+    phone: '8008705905',
+  },
+];
+
+const otherNumbers = [
+  {
+    title: 'Campus Shuttles & Escorts',
+    phone: '5088316111',
+  },
+  {
+    title: 'Residential Services',
+    phone: '5088315645',
+  },
+  {
+    title: 'Student Affairs & Campus Life',
+    phone: '5088315201',
+  },
+  {
+    title: 'Environmental Health & Safety',
+    phone: '5088315298',
   },
 ];
 
@@ -84,11 +135,11 @@ class EmcScreen extends Component {
           <ScrollView>
             <View style={styles.header}>
               <Text style={styles.headerText}>
-                Police
+                Campus Police
               </Text>
             </View>
             {
-            police.map((item, i) => (
+            campusPolice.map((item, i) => (
               <ListItem
                 Component={TouchableScale}
                 friction={90}
@@ -99,6 +150,84 @@ class EmcScreen extends Component {
                 topDivider
                 leftIcon={<MaterialIcons name="phone" size={20} style={{ marginRight: 10 }} color="#ACB2B7" />}
                 chevron
+              />
+            ))
+          }
+
+            <View style={styles.header}>
+              <Text style={styles.headerText}>
+                Medical Assistance
+              </Text>
+            </View>
+            {
+            medicalAssistance.map((item, i) => (
+              <ListItem
+                Component={TouchableScale}
+                friction={90}
+                tension={100} // here TouchableScale
+                activeScale={0.95}
+                key={i}
+                title={item.title}
+                topDivider
+                leftIcon={<MaterialIcons name="phone" size={20} style={{ marginRight: 10 }} color="#ACB2B7" />}
+                chevron
+              />
+            ))
+          }
+
+            <View style={styles.header}>
+              <Text style={styles.headerText}>
+                Crisis Help Lines
+              </Text>
+            </View>
+            {
+            crisisHelp.map((item, i) => (
+              <ListItem
+                Component={TouchableScale}
+                friction={90}
+                tension={100} // here TouchableScale
+                activeScale={0.95}
+                key={i}
+                title={item.title}
+                topDivider
+                leftIcon={<MaterialIcons name="phone" size={20} style={{ marginRight: 10 }} color="#ACB2B7" />}
+                chevron
+              />
+            ))
+          }
+
+            <View style={styles.header}>
+              <Text style={styles.headerText}>
+                Other Important Campus Numbers
+              </Text>
+            </View>
+            {
+              // change this to Collapse instead of listview rip.
+            otherNumbers.map((item, i) => (
+              <ListItem
+                Component={TouchableScale}
+                friction={90}
+                tension={100} // here TouchableScale
+                activeScale={0.95}
+                key={i}
+                title={item.title}
+                topDivider
+                leftIcon={<MaterialIcons name="phone" size={20} style={{ marginRight: 10 }} color="#ACB2B7" />}
+                chevron
+                onPress={(
+                  <CollapseBody style={{
+                    alignItems: 'center', justifyContent: 'center', flexDirection: 'row', backgroundColor: '#E8E8E8',
+                  }}
+                  >
+                    <Collapse style={{ flexDirection: 'row' }}>
+                      <CollapseBody style={{ alignItems: 'center', justifyContent: 'center', padding: 10 }}>
+                        <Text>{otherNumbers.phone}</Text>
+                        <Text>Description here</Text>
+                      </CollapseBody>
+                    </Collapse>
+                  </CollapseBody>
+
+                )}
               />
             ))
           }
