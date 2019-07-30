@@ -45,7 +45,7 @@ import EmcScreen from './screens/SecondLevel/EmcScreen';
 const WelcomeStackNavigator = new createStackNavigator({
   WelcomeScreen: {
     screen: WelcomeScreen,
-    navigationOptions: {
+    navigationOptions: ({ navigation }) => ({
       title: 'WPI',
       headerTitleStyle: {
         fontFamily: 'MinionPro-BoldDisp',
@@ -56,55 +56,95 @@ const WelcomeStackNavigator = new createStackNavigator({
         marginTop: 5,
       },
       headerTintColor: 'white',
-    },
+    }),
   },
   StudyScreen: {
     screen: StudyScreen,
-    navigationOptions: {
-      headerLeft: <HeaderBackButton onPress={() => navigation.goBack(null)} tintColor="white" />,
-    },
+    navigationOptions: ({ navigation }) => ({
+      headerLeft: <HeaderBackButton
+        tintColor="white"
+        onPress={() => {
+          navigation.goBack(null);
+        }}
+      />,
+    }),
   }, // 1
   DiningScreen: {
     screen: DiningScreen,
-    navigationOptions: {
-      headerLeft: <HeaderBackButton onPress={() => navigation.goBack(null)} tintColor="white" />,
-    },
+    navigationOptions: ({ navigation }) => ({
+      headerLeft: <HeaderBackButton
+        tintColor="white"
+        onPress={() => {
+          navigation.goBack(null);
+        }}
+      />,
+    }),
   }, // 2
   HelpfulScreen: {
-    screen: HelpfulLinks,
-    navigationOptions: {
-      headerLeft: <HeaderBackButton onPress={() => navigation.goBack(null)} tintColor="white" />,
-    },
+    screen: HelpfulScreen,
+    navigationOptions: ({ navigation }) => ({
+      headerLeft: <HeaderBackButton
+        tintColor="white"
+        onPress={() => {
+          navigation.goBack(null);
+        }}
+      />,
+    }),
   }, // 3
   CalendarScreen: {
     screen: CalendarScreen,
-    navigationOptions: {
-      headerLeft: <HeaderBackButton onPress={() => navigation.goBack(null)} tintColor="white" />,
-    },
+    navigationOptions: ({ navigation }) => ({
+      headerLeft: <HeaderBackButton
+        tintColor="white"
+        onPress={() => {
+          navigation.goBack(null);
+        }}
+      />,
+    }),
   }, // 4
   BookingScreen: {
     screen: BookingScreen,
-    navigationOptions: {
-      headerLeft: <HeaderBackButton onPress={() => navigation.goBack(null)} tintColor="white" />,
-    },
+    navigationOptions: ({ navigation }) => ({
+      headerLeft: <HeaderBackButton
+        tintColor="white"
+        onPress={() => {
+          navigation.goBack(null);
+        }}
+      />,
+    }),
   }, // 5
   LaundryScreen: {
     screen: LaundryScreen,
-    navigationOptions: {
-      headerLeft: <HeaderBackButton onPress={() => navigation.goBack(null)} tintColor="white" />,
-    },
+    navigationOptions: ({ navigation }) => ({
+      headerLeft: <HeaderBackButton
+        tintColor="white"
+        onPress={() => {
+          navigation.goBack(null);
+        }}
+      />,
+    }),
   }, // 6
   ClubScreen: {
     screen: ClubScreen,
-    navigationOptions: {
-      headerLeft: <HeaderBackButton onPress={() => navigation.goBack(null)} tintColor="white" />,
-    },
+    navigationOptions: ({ navigation }) => ({
+      headerLeft: <HeaderBackButton
+        tintColor="white"
+        onPress={() => {
+          navigation.goBack(null);
+        }}
+      />,
+    }),
   }, // 7
   HoursScreen: {
     screen: HoursScreen,
-    navigationOptions: {
-      headerLeft: <HeaderBackButton onPress={() => navigation.goBack(null)} tintColor="white" />,
-    },
+    navigationOptions: ({ navigation }) => ({
+      headerLeft: <HeaderBackButton
+        tintColor="white"
+        onPress={() => {
+          navigation.goBack(null);
+        }}
+      />,
+    }),
   }, // 8
   CatalogueScreen: { // 9
     screen: CatalogueScreen,
@@ -150,27 +190,37 @@ const MoreStackNavigator = new createStackNavigator({
   },
   AboutScreen: {
     screen: AboutScreen,
-    navigationOptions: {
+    navigationOptions: ({ navigation }) => ({
       title: 'About',
       headerStyle: {
         backgroundColor: '#AC2B37',
         marginTop: 5,
       },
       headerTintColor: 'white',
-      headerLeft: <HeaderBackButton onPress={() => navigation.goBack(null)} tintColor="white" />,
-    },
+      headerLeft: <HeaderBackButton
+        tintColor="white"
+        onPress={() => {
+          navigation.goBack(null);
+        }}
+      />,
+    }),
   },
   EmcScreen: {
     screen: EmcScreen,
-    navigationOptions: {
+    navigationOptions: ({ navigation }) => ({
       title: 'WPI Contacts',
       headerStyle: {
         backgroundColor: '#AC2B37',
         marginTop: 5,
       },
-      headerLeft: <HeaderBackButton onPress={() => navigation.goBack(null)} tintColor="white" />,
+      headerLeft: <HeaderBackButton
+        tintColor="white"
+        onPress={() => {
+          navigation.goBack(null);
+        }}
+      />,
       headerTintColor: 'white',
-    },
+    }),
   },
 });
 
@@ -192,7 +242,7 @@ const ProfileStackNavigator = new createStackNavigator({
   },
   QRCodeScreen: {
     screen: QRCodeScreen,
-    navigationOptions: {
+    navigationOptions: ({ navigation }) => ({
       title: 'WPI',
       headerTitleStyle: {
         fontFamily: 'MinionPro-BoldDisp',
@@ -203,8 +253,13 @@ const ProfileStackNavigator = new createStackNavigator({
         marginTop: 5,
       },
       headerTintColor: 'white',
-      headerLeft: <HeaderBackButton onPress={() => navigation.goBack(null)} tintColor="white" />,
-    },
+      headerLeft: <HeaderBackButton
+        tintColor="white"
+        onPress={() => {
+          navigation.goBack(null);
+        }}
+      />,
+    }),
   },
 });
 

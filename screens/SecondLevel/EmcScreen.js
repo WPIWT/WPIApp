@@ -11,7 +11,6 @@ import TouchableScale from 'react-native-touchable-scale';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Font, AppLoading } from 'expo';
 import { Root } from 'native-base';
-import { Collapse, CollapseBody } from 'accordion-collapse-react-native/lib';
 
 const styles = StyleSheet.create({
   header: {
@@ -214,20 +213,6 @@ class EmcScreen extends Component {
                 topDivider
                 leftIcon={<MaterialIcons name="phone" size={20} style={{ marginRight: 10 }} color="#ACB2B7" />}
                 chevron
-                onPress={(
-                  <CollapseBody style={{
-                    alignItems: 'center', justifyContent: 'center', flexDirection: 'row', backgroundColor: '#E8E8E8',
-                  }}
-                  >
-                    <Collapse style={{ flexDirection: 'row' }}>
-                      <CollapseBody style={{ alignItems: 'center', justifyContent: 'center', padding: 10 }}>
-                        <Text>{otherNumbers.phone}</Text>
-                        <Text>Description here</Text>
-                      </CollapseBody>
-                    </Collapse>
-                  </CollapseBody>
-
-                )}
               />
             ))
           }

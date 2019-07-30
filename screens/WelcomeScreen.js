@@ -152,10 +152,6 @@ export default class WelcomeScreen extends Component {
                 imageUri={require('../assets/images/OutsideGordonLibrary.jpg')}
                 name="Meet Gordon Library"
               />
-              <Category
-                imageUri={require('../assets/images/CampusQuad.jpg')}
-                name="Activities on the Quad"
-              />
             </ScrollView>
           </View>
 

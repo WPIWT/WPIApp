@@ -15,8 +15,8 @@ import { Root } from 'native-base';
 
 const styles = StyleSheet.create({
   container: {
-    height: 140,
-    width: 200,
+    height: '100%',
+    width: '30%',
     marginLeft: 20,
     borderWidth: 1,
     borderColor: '#E8E8E8',

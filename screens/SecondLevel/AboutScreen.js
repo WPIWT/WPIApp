@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   header3: {
-    fontFamily: 'MyriadPro-Light',
+    fontFamily: 'MyriadPro-Regular',
     fontSize: 16,
     color: 'black',
     textAlign: 'left',
