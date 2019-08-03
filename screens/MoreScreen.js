@@ -7,7 +7,7 @@ import React, { Component } from 'react';
 import { View, ScrollView } from 'react-native';
 import { ListItem } from 'react-native-elements';
 import TouchableScale from 'react-native-touchable-scale';
-import { MaterialIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const list = [
   {
@@ -16,14 +16,19 @@ const list = [
     icon: 'lock',
   },
   {
+    title: 'Alerts',
+    page: 'EmcScreen',
+    icon: 'alert',
+  },
+  {
     title: 'WPI Contacts',
     page: 'EmcScreen',
-    icon: 'contact-phone',
+    icon: 'contacts',
   },
   {
     title: 'About',
     page: 'AboutScreen',
-    icon: 'info',
+    icon: 'information-outline',
   },
 ];
 
@@ -51,7 +56,7 @@ class MoreScreen extends Component {
                 title={item.title}
                 onPress={() => this.props.navigation.navigate(item.page)}
                 topDivider
-                leftIcon={<MaterialIcons name={item.icon} size={42} style={{ marginRight: 10 }} color="#ACB2B7" />}
+                leftIcon={<MaterialCommunityIcons name={item.icon} size={42} style={{ marginRight: 10 }} color="#ACB2B7" />}
                 chevron
               />
             ))
