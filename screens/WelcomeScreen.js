@@ -8,30 +8,31 @@
 /* eslint-disable react/prefer-stateless-function */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable global-require */
+/* eslint-disable object-curly-newline */
 
 import React, { Component } from 'react';
-import {
-  StyleSheet, View, Button, ScrollView, Image, TouchableOpacity, Linking, StatusBar, WebView,
-} from 'react-native';
-
+import { StyleSheet, View, Button, ScrollView, Image, TouchableOpacity, Linking, StatusBar } from 'react-native';
 import { Text, Card, Divider } from 'react-native-elements';
-
 import { Font, AppLoading } from 'expo';
 import { Root } from 'native-base';
-
-import {
-  FontAwesome, Feather, MaterialIcons, MaterialCommunityIcons,
-} from '@expo/vector-icons';
+import { FontAwesome, Feather, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
+import CardSlider from 'react-native-cards-slider';
 
 import Category from '../news/Category';
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   card: {
     backgroundColor: 'transparent',
     borderWidth: 0,
     borderColor: '#fff',
     borderRadius: 20,
-    marginTop: -10,
+    // marginTop: -10,
     padding: 0,
   },
   cardText: {
@@ -40,12 +41,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: 'bold',
     marginTop: 20,
-  },
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   button: {
     flex: 1,
@@ -78,6 +73,28 @@ const styles = StyleSheet.create({
     textAlignVertical: 'center',
     textAlign: 'center',
     lineHeight: 20,
+  },
+  helpfulButton: {
+    flex: 1,
+    height: 70,
+    marginTop: 10,
+    marginLeft: 20,
+    marginRight: 20,
+    flexDirection: 'row',
+    borderRadius: 10,
+    backgroundColor: '#E8E8E8',
+    alignItems: 'flex-end',
+    justifyContent: 'space-between',
+  },
+  helpfulText: {
+    fontFamily: 'MyriadPro-Regular',
+    fontSize: 20,
+    textAlign: 'left',
+    marginLeft: 10,
+    marginBottom: 20,
+    flexDirection: 'row',
+    alignItems: 'center',
+    color: 'black',
   },
   cardNews: {
     backgroundColor: '#fff',
@@ -133,26 +150,24 @@ export default class WelcomeScreen extends Component {
       <View style={styles.container}>
         <ScrollView>
           <View style={{ height: 150, marginTop: 20 }}>
-            <ScrollView
-              horizontal={true}
-            >
-              <Category
-                imageUri={require('../assets/images/Worcester.jpg')}
-                name="Welcome to Worcester!"
-              />
-              <Category
-                imageUri={require('../assets/images/OutsideFoisie.jpg')}
-                name="New Foisie Innovation Center"
-              />
-              <Category
-                imageUri={require('../assets/images/helpful.jpg')}
-                name="New Students Orientation"
-              />
-              <Category
-                imageUri={require('../assets/images/OutsideGordonLibrary.jpg')}
-                name="Meet Gordon Library"
-              />
-            </ScrollView>
+            <CardSlider>
+              <View style={{
+                height: 150, justifyContent: 'center', alignItems: 'center', backgroundColor: 'lightsalmon', borderRadius: 10,
+              }}
+              >
+               <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold', fontFamily: 'MyriadPro-Regular' }}>
+                  Hello
+               </Text>
+              </View>
+              <View style={{
+                height: 150, justifyContent: 'center', alignItems: 'center', backgroundColor: 'lightpink', borderRadius: 10,
+              }}
+              >
+              <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold' }}>
+                上海
+              </Text>
+              </View>
+            </CardSlider>
           </View>
 
           <View style={styles.buttonFirstRow}>
@@ -233,38 +248,21 @@ export default class WelcomeScreen extends Component {
             </TouchableOpacity>
           </View>
 
-          <Divider style={{ height: 25, backgroundColor: 'white' }} />
 
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate('HelpfulScreen')}
-          >
-            <Card
-              containerStyle={styles.card}
-              image={require('../assets/images/helpful.jpg')}
-              imageStyle={{
-                alignContent: 'center',
-                borderRadius: 10,
-                overflow: 'hidden',
-              }}
-              featuredTitle="Helpful Links"
-              featuredTitleStyle={styles.cardText}
-            />
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('HelpfulScreen')}>
+            <View style={styles.helpfulButton}>
+                    <Text style={styles.helpfulText}>Helpful Links</Text>
+                    <MaterialIcons name="chevron-right" size={30} color="#585858" style={{ textAlign: 'right', marginBottom: 20 }} />
+            </View>
           </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate('CampusMap')}
-          >
-            <Card
-              containerStyle={styles.card}
-              image={require('../assets/images/CampusQuad.jpg')}
-              imageStyle={{
-                alignContent: 'center',
-                borderRadius: 10,
-                overflow: 'hidden',
-              }}
-              featuredTitle="Campus Map"
-              featuredTitleStyle={styles.cardText}
-            />
+
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('CampusMap')}>
+            <View style={styles.helpfulButton}>
+                    <Text style={styles.helpfulText}>Campus Map</Text>
+                    <MaterialIcons name="chevron-right" size={30} color="#585858" style={{ textAlign: 'right', marginBottom: 20 }} />
+            </View>
           </TouchableOpacity>
+
 
           <Card
             containerStyle={styles.card}

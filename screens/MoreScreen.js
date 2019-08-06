@@ -28,7 +28,7 @@ const list = [
   {
     title: 'About',
     page: 'AboutScreen',
-    icon: 'information-outline',
+    icon: 'information',
   },
 ];
 
@@ -43,7 +43,7 @@ class MoreScreen extends Component {
 
     render() {
       return (
-        <View>
+        <View style={{ flex: 1 }}>
           <ScrollView>
             {
             list.map((item, i) => (
