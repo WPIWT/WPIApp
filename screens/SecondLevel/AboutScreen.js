@@ -277,7 +277,7 @@ class AboutScreen extends React.Component {
             <TouchableOpacity>
               <View style={styles.buttonContainer}>
                 <Avatar
-                  source={require('../../assets/images/Worcester.jpg')}
+                  source={require('../../assets/teamPics/ChrisMercer.jpg')}
                   size="large"
                   rounded
                   title="CM"

@@ -85,6 +85,10 @@ const otherNumbers = [
     phone: '5088316111',
   },
   {
+    title: 'Environmental Health & Safety',
+    phone: '5088315298',
+  },
+  {
     title: 'Residential Services',
     phone: '5088315645',
   },
@@ -93,8 +97,8 @@ const otherNumbers = [
     phone: '5088315201',
   },
   {
-    title: 'Environmental Health & Safety',
-    phone: '5088315298',
+    title: 'WPI Closing/Delay Line',
+    phone: '5088315744',
   },
 ];
 

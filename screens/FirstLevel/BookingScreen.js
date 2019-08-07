@@ -6,7 +6,7 @@ import React, { Component } from 'react';
 import {
   StyleSheet, View, TouchableOpacity, Image, ScrollView,
 } from 'react-native';
-import { Card } from 'react-native-elements';
+import { Card, Divider } from 'react-native-elements';
 
 
 const styles = StyleSheet.create({
@@ -14,7 +14,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     borderWidth: 0,
     borderColor: '#fff',
-    borderRadius: 25,
+    borderRadius: 20,
+    marginTop: -10,
+    padding: 0,
   },
 });
 
@@ -29,8 +31,9 @@ class BookingScreen extends Component {
 
   render() {
     return (
-      <View>
+      <View style={{ flex: 1 }}>
         <ScrollView>
+          <Divider style={{ height: 30, backgroundColor: 'white' }} />
           <TouchableOpacity
             onPress={() => this.props.navigation.navigate('CalendarScreen')}
           >
@@ -58,6 +61,20 @@ class BookingScreen extends Component {
                 overflow: 'hidden',
               }}
               featuredTitle="Gordon Library"
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('HelpfulScreen')}
+          >
+            <Card
+              containerStyle={styles.card}
+              image={require('../../assets/images/CampusQuad.jpg')}
+              imageStyle={{
+                alignContent: 'center',
+                borderRadius: 10,
+                overflow: 'hidden',
+              }}
+              featuredTitle="Other"
             />
           </TouchableOpacity>
         </ScrollView>

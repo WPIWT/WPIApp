@@ -22,8 +22,8 @@ import { Root } from 'native-base';
 
 // Zeroth Level
 import WelcomeScreen from './screens/WelcomeScreen';
-import ProfileScreen from './screens/ProfileScreen';
 import MoreScreen from './screens/MoreScreen';
+import NewsScreen from './screens/NewsScreen';
 
 // First Level
 import StudyScreen from './screens/FirstLevel/StudyScreen';
@@ -41,8 +41,11 @@ import CampusMap from './screens/FirstLevel/CampusMap';
 // Second Level
 import LaundryLinks from './screens/SecondLevel/LaundryLinks';
 import HelpfulLinks from './screens/SecondLevel/HelpfulLinks';
+// More Screen
 import AboutScreen from './screens/SecondLevel/AboutScreen';
 import EmcScreen from './screens/SecondLevel/EmcScreen';
+import ProfileScreen from './screens/SecondLevel/ProfileScreen';
+import AlertScreen from './screens/SecondLevel/AlertScreen';
 
 const WelcomeStackNavigator = new createStackNavigator({
   WelcomeScreen: {
@@ -224,32 +227,10 @@ const MoreStackNavigator = new createStackNavigator({
       headerTintColor: 'white',
     }),
   },
-});
-
-const ProfileStackNavigator = new createStackNavigator({
-  ProfileScreen: {
-    screen: ProfileScreen,
-    navigationOptions: {
-      title: 'WPI',
-      headerTitleStyle: {
-        fontFamily: 'MinionPro-BoldDisp',
-        fontSize: 30,
-      },
-      headerStyle: {
-        backgroundColor: '#AC2B37',
-        marginTop: 5,
-      },
-      headerTintColor: 'white',
-    },
-  },
-  QRCodeScreen: {
-    screen: QRCodeScreen,
+  AlertScreen: {
+    screen: AlertScreen,
     navigationOptions: ({ navigation }) => ({
-      title: 'WPI',
-      headerTitleStyle: {
-        fontFamily: 'MinionPro-BoldDisp',
-        fontSize: 30,
-      },
+      title: 'Alerts',
       headerStyle: {
         backgroundColor: '#AC2B37',
         marginTop: 5,
@@ -262,6 +243,58 @@ const ProfileStackNavigator = new createStackNavigator({
         }}
       />,
     }),
+  },
+  ProfileScreen: {
+    screen: ProfileScreen,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Profile',
+      headerStyle: {
+        backgroundColor: '#AC2B37',
+        marginTop: 5,
+      },
+      headerTintColor: 'white',
+      headerLeft: <HeaderBackButton
+        tintColor="white"
+        onPress={() => {
+          navigation.goBack(null);
+        }}
+      />,
+    }),
+  },
+  QRCodeScreen: {
+    screen: QRCodeScreen,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Profile',
+      headerStyle: {
+        backgroundColor: '#AC2B37',
+        marginTop: 5,
+      },
+      headerTintColor: 'white',
+      headerLeft: <HeaderBackButton
+        tintColor="white"
+        onPress={() => {
+          navigation.goBack(null);
+        }}
+      />,
+    }),
+  },
+});
+
+const NewsStackNavigator = new createStackNavigator({
+  NewsScreen: {
+    screen: NewsScreen,
+    navigationOptions: {
+      title: 'WPI',
+      headerTitleStyle: {
+        fontFamily: 'MinionPro-BoldDisp',
+        fontSize: 30,
+      },
+      headerStyle: {
+        backgroundColor: '#AC2B37',
+        marginTop: 5,
+      },
+      headerTintColor: 'white',
+    },
   },
 });
 
@@ -292,13 +325,13 @@ const TabNavigator = createMaterialBottomTabNavigator(
         ),
       },
     },
-    Profile: {
-      screen: ProfileStackNavigator,
+    NewsScreen: {
+      screen: NewsStackNavigator,
       navigationOptions: {
-        tabBarLabel: 'Profile',
+        tabBarLabel: 'News',
         tabBarIcon: ({ tintColor }) => (
           <View>
-            <Icon style={[{ color: tintColor }]} size={25} name="ios-person" />
+            <Icon style={[{ color: tintColor }]} size={25} name="ios-paper" />
           </View>
         ),
         activeColor: '#AC2B37',
