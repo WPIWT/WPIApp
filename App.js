@@ -312,20 +312,6 @@ const NewsStackNavigator = new createStackNavigator({
 
 const TabNavigator = createMaterialBottomTabNavigator(
   {
-    MoreScreen: {
-      screen: MoreStackNavigator,
-      navigationOptions: {
-        tabBarLabel: 'More',
-        tabBarIcon: ({ tintColor }) => (
-          <View>
-            <Icon style={[{ color: tintColor }]} size={25} name="ios-more" />
-          </View>
-        ),
-        activeColor: '#AC2B37',
-        inactiveColor: '#696969',
-        barStyle: { backgroundColor: '#f0edf6' },
-      },
-    },
     WelcomeScreen: {
       screen: WelcomeStackNavigator,
       navigationOptions: {
@@ -344,6 +330,20 @@ const TabNavigator = createMaterialBottomTabNavigator(
         tabBarIcon: ({ tintColor }) => (
           <View>
             <Icon style={[{ color: tintColor }]} size={25} name="ios-paper" />
+          </View>
+        ),
+        activeColor: '#AC2B37',
+        inactiveColor: '#696969',
+        barStyle: { backgroundColor: '#f0edf6' },
+      },
+    },
+    MoreScreen: {
+      screen: MoreStackNavigator,
+      navigationOptions: {
+        tabBarLabel: 'More',
+        tabBarIcon: ({ tintColor }) => (
+          <View>
+            <Icon style={[{ color: tintColor }]} size={25} name="ios-more" />
           </View>
         ),
         activeColor: '#AC2B37',
