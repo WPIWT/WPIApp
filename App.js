@@ -21,31 +21,48 @@ import { Root } from 'native-base';
 
 
 // Zeroth Level
-import WelcomeScreen from './screens/WelcomeScreen';
-import MoreScreen from './screens/MoreScreen';
-import NewsScreen from './screens/NewsScreen';
+import WelcomeScreen from './screens/Home/WelcomeScreen';
 
-// First Level
-import StudyScreen from './screens/FirstLevel/StudyScreen';
-import DiningScreen from './screens/FirstLevel/DiningScreen';
-import HelpfulScreen from './screens/FirstLevel/HelpfulScreen';
-import CalendarScreen from './screens/FirstLevel/CalendarScreen';
-import BookingScreen from './screens/FirstLevel/BookingScreen';
-import LaundryScreen from './screens/FirstLevel/LaundryScreen';
-import ClubScreen from './screens/FirstLevel/ClubScreen';
-import HoursScreen from './screens/FirstLevel/HoursScreen';
-import CatalogueScreen from './screens/FirstLevel/CatalogueScreen';
-import QRCodeScreen from './screens/FirstLevel/QRCodeScreen';
-import CampusMap from './screens/FirstLevel/CampusMap';
+// Helpful Links
+import HelpfulScreen from './screens/Home/HelpfulLinks/HelpfulScreen';
+import HelpfulLinks from './screens/Home/HelpfulLinks/HelpfulLinks';
 
-// Second Level
-import LaundryLinks from './screens/SecondLevel/LaundryLinks';
-import HelpfulLinks from './screens/SecondLevel/HelpfulLinks';
-// More Screen
-import AboutScreen from './screens/SecondLevel/AboutScreen';
-import EmcScreen from './screens/SecondLevel/EmcScreen';
-import ProfileScreen from './screens/SecondLevel/ProfileScreen';
-import AlertScreen from './screens/SecondLevel/AlertScreen';
+// Campus Map
+import CampusMap from './screens/Home/CampusMap/CampusMap';
+
+// Titans
+import StudyScreen from './screens/Home/Titans/StudyMap/StudyScreen';
+
+import DiningScreen from './screens/Home/Titans/Dining/DiningScreen';
+
+import CalendarScreen from './screens/Home/Titans/Calendar/CalendarScreen';
+
+import BookingScreen from './screens/Home/Titans/Booking/BookingScreen';
+
+import LaundryScreen from './screens/Home/Titans/Laundry/LaundryScreen';
+import LaundryLinks from './screens/Home/Titans/Laundry/LaundryLinks';
+
+import ClubScreen from './screens/Home/Titans/Clubs/ClubScreen';
+
+import HoursScreen from './screens/Home/Titans/HourOperation/HoursScreen';
+
+import CatalogueScreen from './screens/Home/Titans/Catalog/CatalogueScreen';
+
+// More Tab
+import MoreScreen from './screens/More/MoreScreen';
+import AboutScreen from './screens/More/AboutScreen';
+import EmcScreen from './screens/More/EmcScreen';
+import AlertScreen from './screens/More/AlertScreen';
+
+// Profile
+import ProfileScreen from './screens/Profile/ProfileScreen';
+import QRCodeScreen from './screens/Profile/QRCodeScreen';
+
+// News Tab
+import NewsScreen from './screens/News/NewsScreen';
+
+// Notification
+import NotificationScreen from './screens/Notifications/NotificationScreen';
 
 const WelcomeStackNavigator = new createStackNavigator({
   WelcomeScreen: {
@@ -61,8 +78,35 @@ const WelcomeStackNavigator = new createStackNavigator({
         marginTop: 5,
       },
       headerTintColor: 'white',
+      headerLeft: <Icon
+        name="ios-person"
+        type="font-awesome"
+        color="#fff"
+        style={{ marginLeft: 20 }}
+        size={28}
+        onPress={() => navigation.navigate('ProfileScreen')}
+      />,
+      headerRight: <Icon
+        name="ios-notifications"
+        type="font-awesome"
+        color="#fff"
+        style={{ marginRight: 20 }}
+        size={28}
+        onPress={() => navigation.navigate('NotificationScreen')}
+      />,
     }),
   },
+  NotificationScreen: {
+    screen: NotificationScreen,
+    navigationOptions: ({ navigation }) => ({
+      headerLeft: <HeaderBackButton
+        tintColor="white"
+        onPress={() => {
+          navigation.goBack(null);
+        }}
+      />,
+    }),
+  }, // 1
   StudyScreen: {
     screen: StudyScreen,
     navigationOptions: ({ navigation }) => ({
@@ -174,6 +218,23 @@ const WelcomeStackNavigator = new createStackNavigator({
     navigationOptions: {
       header: null,
     },
+  },
+  ProfileScreen: {
+    screen: ProfileScreen,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Profile',
+      headerStyle: {
+        backgroundColor: '#AC2B37',
+        marginTop: 5,
+      },
+      headerTintColor: 'white',
+      headerLeft: <HeaderBackButton
+        tintColor="white"
+        onPress={() => {
+          navigation.goBack(null);
+        }}
+      />,
+    }),
   },
 });
 
@@ -300,20 +361,6 @@ const NewsStackNavigator = new createStackNavigator({
 
 const TabNavigator = createMaterialBottomTabNavigator(
   {
-    MoreScreen: {
-      screen: MoreStackNavigator,
-      navigationOptions: {
-        tabBarLabel: 'More',
-        tabBarIcon: ({ tintColor }) => (
-          <View>
-            <Icon style={[{ color: tintColor }]} size={25} name="ios-more" />
-          </View>
-        ),
-        activeColor: '#AC2B37',
-        inactiveColor: '#696969',
-        barStyle: { backgroundColor: '#f0edf6' },
-      },
-    },
     WelcomeScreen: {
       screen: WelcomeStackNavigator,
       navigationOptions: {
@@ -332,6 +379,20 @@ const TabNavigator = createMaterialBottomTabNavigator(
         tabBarIcon: ({ tintColor }) => (
           <View>
             <Icon style={[{ color: tintColor }]} size={25} name="ios-paper" />
+          </View>
+        ),
+        activeColor: '#AC2B37',
+        inactiveColor: '#696969',
+        barStyle: { backgroundColor: '#f0edf6' },
+      },
+    },
+    MoreScreen: {
+      screen: MoreStackNavigator,
+      navigationOptions: {
+        tabBarLabel: 'More',
+        tabBarIcon: ({ tintColor }) => (
+          <View>
+            <Icon style={[{ color: tintColor }]} size={25} name="ios-more" />
           </View>
         ),
         activeColor: '#AC2B37',
