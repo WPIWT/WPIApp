@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     borderWidth: 0,
     borderColor: '#fff',
     borderRadius: 20,
-    // marginTop: -10,
+    marginTop: 13,
     padding: 0,
   },
   cardText: {

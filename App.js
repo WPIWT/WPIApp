@@ -59,6 +59,9 @@ import QRCodeScreen from './screens/Profile/QRCodeScreen';
 // News Tab
 import NewsScreen from './screens/News/NewsScreen';
 
+// Notification
+import NotificationScreen from './screens/Notifications/NotificationScreen';
+
 const WelcomeStackNavigator = new createStackNavigator({
   WelcomeScreen: {
     screen: WelcomeScreen,
@@ -73,8 +76,35 @@ const WelcomeStackNavigator = new createStackNavigator({
         marginTop: 5,
       },
       headerTintColor: 'white',
+      headerLeft: <Icon
+        name="ios-person"
+        type="font-awesome"
+        color="#fff"
+        style={{ marginLeft: 20 }}
+        size={28}
+        onPress={() => navigation.navigate('ProfileScreen')}
+      />,
+      headerRight: <Icon
+        name="ios-notifications"
+        type="font-awesome"
+        color="#fff"
+        style={{ marginRight: 20 }}
+        size={28}
+        onPress={() => navigation.navigate('NotificationScreen')}
+      />,
     }),
   },
+  NotificationScreen: {
+    screen: NotificationScreen,
+    navigationOptions: ({ navigation }) => ({
+      headerLeft: <HeaderBackButton
+        tintColor="white"
+        onPress={() => {
+          navigation.goBack(null);
+        }}
+      />,
+    }),
+  }, // 1
   StudyScreen: {
     screen: StudyScreen,
     navigationOptions: ({ navigation }) => ({
@@ -186,6 +216,23 @@ const WelcomeStackNavigator = new createStackNavigator({
     navigationOptions: {
       header: null,
     },
+  },
+  ProfileScreen: {
+    screen: ProfileScreen,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Profile',
+      headerStyle: {
+        backgroundColor: '#AC2B37',
+        marginTop: 5,
+      },
+      headerTintColor: 'white',
+      headerLeft: <HeaderBackButton
+        tintColor="white"
+        onPress={() => {
+          navigation.goBack(null);
+        }}
+      />,
+    }),
   },
 });
 
