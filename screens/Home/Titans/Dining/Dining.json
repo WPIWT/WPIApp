@@ -1,0 +1,49 @@
+[
+    {
+        "name": "Aunti Annes",
+        "image": "../../assets/images/Worcester.jpg",
+        "LunchHours": "11-2",
+        "DinnerHours": "5-8",
+        "naviagtion": "CalendarScreen"
+    },
+
+    {
+        "name": "Campus Center",
+        "image": "../../assets/images/Worcester.jpg",
+        "LunchHours": "11-2",
+        "DinnerHours": "5-8",
+        "naviagtion": "CalendarScreen"
+    },
+
+    {
+        "name": "Dunkin Donuts",
+        "image": "../../assets/images/Worcester.jpg",
+        "LunchHours": "11-2",
+        "DinnerHours": "5-8",
+        "naviagtion": "CalendarScreen"
+    },
+
+    {
+        "name": "Goats Head",
+        "image": "../../assets/images/Worcester.jpg",
+        "LunchHours": "11-2",
+        "DinnerHours": "5-8",
+        "naviagtion": "CalendarScreen"
+    },
+
+    {
+        "name": "Library Cafe",
+        "image": "../../assets/images/Worcester.jpg",
+        "LunchHours": "11-2",
+        "DinnerHours": "5-8",
+        "naviagtion": "CalendarScreen"
+    },
+
+    {
+        "name": "Pulse on Dining",
+        "image": "../../assets/images/Worcester.jpg",
+        "LunchHours": "11-2",
+        "DinnerHours": "5-8",
+        "naviagtion": "CalendarScreen"
+    }
+]

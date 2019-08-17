@@ -39,7 +39,7 @@ class BookingScreen extends Component {
           >
             <Card
               containerStyle={styles.card}
-              image={require('../../../../assets/images/OutsideFoisie.jpg')}
+              image={require('../../../../assets/images/Location/OutsideFoisie.jpg')}
               imageStyle={{
                 alignContent: 'center',
                 borderRadius: 10,
@@ -54,7 +54,7 @@ class BookingScreen extends Component {
           >
             <Card
               containerStyle={styles.card}
-              image={require('../../../../assets/images/OutsideGordonLibrary.jpg')}
+              image={require('../../../../assets/images/Location/OutsideGordonLibrary.jpg')}
               imageStyle={{
                 alignContent: 'center',
                 borderRadius: 10,
@@ -68,7 +68,7 @@ class BookingScreen extends Component {
           >
             <Card
               containerStyle={styles.card}
-              image={require('../../../../assets/images/CampusQuad.jpg')}
+              image={require('../../../../assets/images/Location/CampusQuad.jpg')}
               imageStyle={{
                 alignContent: 'center',
                 borderRadius: 10,

@@ -10,6 +10,8 @@ import { Text, Card, Divider } from 'react-native-elements';
 import { Right, Body, Root } from 'native-base';
 import { Font, AppLoading } from 'expo';
 
+var diningData = require('./Dining.json');
+
 const styles = StyleSheet.create({
   card: {
     backgroundColor: '#fff',
@@ -85,19 +87,19 @@ class DiningScreen extends Component {
       <TouchableOpacity
         onPress={() => this.props.navigation.navigate('CalendarScreen')}
       >
-        <Card containerStyle={styles.card}>
+        <Card containerStyle={styles.card}
+              image={require('../../../../assets/images/Location/Worcester.jpg')}
+              imageStyle={{
+                alignContent: 'center',
+                borderRadius: 10,
+                overflow: 'hidden',
+              }}>
+          
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
             <Text style={styles.name}>Pulse on Dining</Text>
             <Text note>OPEN</Text>
             <Text note>11-2 | 5-8</Text>
           </View>
-          <Right>
-            <Body style={{ }}>
-              <Text style={styles.name}>Pulse on Dining</Text>
-              <Text style={{ color: 'green' }} note>OPEN</Text>
-              <Text style={{ color: '#989898' }} note>11-2 | 5-8</Text>
-            </Body>
-          </Right>
 
           <Divider style={{ backgroundColor: '#000', marginVertical: 20 }} />
 
@@ -105,6 +107,7 @@ class DiningScreen extends Component {
             <Text style={styles.status}> open </Text>
             <Text style={styles.hours}> 11 - 2 | 5 - 8 </Text>
           </View>
+          
         </Card>
       </TouchableOpacity>
     );

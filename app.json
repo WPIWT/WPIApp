@@ -10,9 +10,9 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/AppLogo.png",
+    "icon": "./assets/images/WPILogos/AppLogo.png",
     "splash": {
-      "image": "./assets/splashWPI.png",
+      "image": "./assets/images/Screens/splashWPI.png",
       "resizeMode": "contain" , 
       "backgroundColor": "#AC2B37"
     },
