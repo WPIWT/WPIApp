@@ -266,7 +266,7 @@ export default class WelcomeScreen extends Component {
 
           <Card
             containerStyle={styles.card}
-            image={require('../../assets/images/Worcester.jpg')}
+            image={require('../../assets/images/Location/Worcester.jpg')}
             imageStyle={{
               alignContent: 'center',
               borderRadius: 10,

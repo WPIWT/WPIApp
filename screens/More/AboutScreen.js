@@ -290,7 +290,7 @@ class AboutScreen extends React.Component {
             <TouchableOpacity>
               <View style={styles.buttonContainer}>
                 <Avatar
-                  source={require('../../assets/images/Worcester.jpg')}
+                  source={require('../../assets/images/Location/Worcester.jpg')}
                   size="large"
                   rounded
                   title="JS"
@@ -305,7 +305,7 @@ class AboutScreen extends React.Component {
           <View style={styles.image}>
             <Image
               style={{ marginTop: 30, width: 140, height: 140 }}
-              source={require('../../assets/images/WPI_logo.png')}
+              source={require('../../assets/images/WPILogos/WPI_logo.png')}
             />
             <Divider style={{ backgroundColor: '#F8F8F8', marginVertical: 10 }} />
             <Text style={{ fontSize: 14, fontFamily: 'MyriadPro-Light', textAlign: 'center', marginLeft: 10, marginRight: 10 }}>
