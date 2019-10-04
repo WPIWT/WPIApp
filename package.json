@@ -10,10 +10,10 @@
     "@expo/vector-icons": "^10.0.1",
     "accordion-collapse-react-native": "^0.1.11",
     "eslint": "^5.16.0",
-    "expo": "^32.0.0",
+    "expo": "^27.0.0",
     "native-base": "^2.12.1",
-    "react": "16.5.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "react": "16.3.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-27.0.0.tar.gz",
     "react-native-cards-slider": "^0.1.2",
     "react-native-elements": "^1.1.0",
     "react-native-fetch-blob": "^0.10.8",
@@ -24,10 +24,11 @@
     "react-native-searchbar": "^1.16.0",
     "react-native-touchable-scale": "^2.0.0",
     "react-native-vector-icons": "^6.4.2",
-    "react-navigation": "^3.11.0",
+    "react-navigation": "^1.5.11",
     "react-navigation-material-bottom-tabs": "^1.0.0",
     "rn-fetch-blob": "^0.10.15",
-    "rn-pdf-reader-js": "^0.2.3"
+    "rn-pdf-reader-js": "^0.2.3",
+    "yarn-install": "^1.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.2",

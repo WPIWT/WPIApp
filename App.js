@@ -1,4 +1,3 @@
-//test to see if git works
 
 /* eslint-disable react/prop-types */
 /* eslint-disable no-lone-blocks */
@@ -47,6 +46,7 @@ import ClubScreen from './screens/Home/Titans/Clubs/ClubScreen';
 import HoursScreen from './screens/Home/Titans/HourOperation/HoursScreen';
 
 import CatalogueScreen from './screens/Home/Titans/Catalog/CatalogueScreen';
+import CatalogViewer from './screens/Home/Titans/Catalog/CatalogViewer';
 
 // More Tab
 import MoreScreen from './screens/More/MoreScreen';
@@ -195,8 +195,19 @@ const WelcomeStackNavigator = new createStackNavigator({
       />,
     }),
   }, // 8
-  CatalogueScreen: { // 9
+  CatalogueScreen: {
     screen: CatalogueScreen,
+    navigationOptions: ({ navigation }) => ({
+      headerLeft: <HeaderBackButton
+        tintColor="white"
+        onPress={() => {
+          navigation.goBack(null);
+        }}
+      />,
+    }),
+  }, // 9
+  CatalogViewer: { // 9
+    screen: CatalogViewer,
     navigationOptions: {
       header: null,
     },

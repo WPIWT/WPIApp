@@ -3,7 +3,7 @@
     "name": "WPIApp",
     "slug": "WPIApp",
     "privacy": "public",
-    "sdkVersion": "32.0.0",
+    "sdkVersion": "27.0.0",
     "platforms": [
       "ios",
       "android"
