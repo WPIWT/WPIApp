@@ -2,7 +2,6 @@
 This is a test application for the main WPI App. Most likely will be the final version of the app.
 
 ## Features 
-- Study Groups
 - Dining Hours and Menu Access
 - Easy Bannerweb Access
 - Calender updated daily with Campus wide events
