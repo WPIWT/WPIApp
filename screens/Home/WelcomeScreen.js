@@ -13,7 +13,8 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Button, ScrollView, Image, TouchableOpacity, Linking, StatusBar } from 'react-native';
 import { Text, Card, Divider } from 'react-native-elements';
-import { Font, AppLoading } from 'expo';
+import { AppLoading } from 'expo';
+import * as Font from 'expo-font';
 import { Root } from 'native-base';
 import { FontAwesome, Feather, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 import CardSlider from 'react-native-cards-slider';
@@ -152,19 +153,19 @@ export default class WelcomeScreen extends Component {
           <View style={{ height: 150, marginTop: 20 }}>
             <CardSlider>
               <View style={{
-                height: 150, justifyContent: 'center', alignItems: 'center', backgroundColor: 'lightsalmon', borderRadius: 10,
+                height: 150, justifyContent: 'center', alignItems: 'center', backgroundColor: '#83A82A', borderRadius: 10,
               }}
               >
                <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold', fontFamily: 'MyriadPro-Regular' }}>
-                  Hello
+                  Latest Events
                </Text>
               </View>
               <View style={{
                 height: 150, justifyContent: 'center', alignItems: 'center', backgroundColor: 'lightpink', borderRadius: 10,
               }}
               >
-              <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold' }}>
-                上海
+              <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold', fontFamily: 'MyriadPro-Regular' }}>
+                Latest Events
               </Text>
               </View>
             </CardSlider>

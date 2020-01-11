@@ -9,8 +9,10 @@ import { StyleSheet, View, ScrollView, Text } from 'react-native';
 import { ListItem } from 'react-native-elements';
 import TouchableScale from 'react-native-touchable-scale';
 import { MaterialIcons } from '@expo/vector-icons';
-import { Font, AppLoading } from 'expo';
+import { AppLoading } from 'expo';
+import * as Font from 'expo-font';
 import { Root } from 'native-base';
+import Call from 'react-native-phone-call';
 
 const styles = StyleSheet.create({
   header: {
@@ -38,14 +40,17 @@ const campusPolice = [
   {
     title: 'WPI Police (Emergency)',
     phone: '5088315555',
+    prompt: true,
   },
   {
     title: 'WPI Police (Non-Emergency)',
     phone: '5087998600',
+    prompt: true,
   },
   {
     title: 'WPI Campus Police',
     phone: '5088315433',
+    prompt: true,
   },
 ];
 
@@ -145,6 +150,7 @@ class EmcScreen extends Component {
             campusPolice.map((item, i) => (
               <ListItem
                 Component={TouchableScale}
+                onPress={}
                 friction={90}
                 tension={100} // here TouchableScale
                 activeScale={0.95}

@@ -8,7 +8,8 @@ import {
 } from 'react-native';
 import { Text, Card, Divider } from 'react-native-elements';
 import { Right, Body, Root } from 'native-base';
-import { Font, AppLoading } from 'expo';
+import { AppLoading } from 'expo';
+import * as Font from 'expo-font';
 
 var diningData = require('./Dining.json');
 

@@ -21,7 +21,7 @@ export default class CampusMap extends React.Component {
     return (
       <View style={styles.container}>
         <PDFReader
-          source={{ uri: 'https://web.wpi.edu/Images/CMS/Police/ParkingMap.pdf' }}
+          source={{ uri: 'https://www.wpi.edu/sites/default/files/docs/About-WPI/WPI_CampusMap.pdf' }}
         />
       </View>
     );

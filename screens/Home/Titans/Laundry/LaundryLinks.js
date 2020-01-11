@@ -5,9 +5,10 @@
 /* eslint-disable global-require */
 import React, { Component } from 'react';
 import {
-  View, Text, StyleSheet, WebView,
+  View, Text, StyleSheet,
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import { WebView } from 'react-native-webview';
 
 const styles = StyleSheet.create({
   navBar: {

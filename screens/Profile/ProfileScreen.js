@@ -60,10 +60,11 @@ class ProfileScreen extends Component {
         <View style={styles.divContainer}>
           <View style={styles.header}>
             <Avatar
-              source={{
-                uri:
-                'https://i.kym-cdn.com/photos/images/newsfeed/001/439/881/ed5.png',
-              }}
+              // source={{
+              //   uri:
+              //   'https://i.kym-cdn.com/photos/images/newsfeed/001/439/881/ed5.png',
+              // }}
+              source={require('../../assets/teamPics/gompeiProfilePic.jpg')}
               size="xlarge"
               rounded
               title="TS"

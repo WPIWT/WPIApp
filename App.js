@@ -15,7 +15,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator, createAppContainer, HeaderBackButton } from 'react-navigation';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { Font, AppLoading } from 'expo';
+import { AppLoading } from 'expo';
+import * as Font from 'expo-font';
 import { Root } from 'native-base';
 
 

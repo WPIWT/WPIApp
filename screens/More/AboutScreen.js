@@ -10,7 +10,8 @@ import {
 } from 'react-native';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { ScrollView } from 'react-native-gesture-handler';
-import { Font, AppLoading } from 'expo';
+import { AppLoading } from 'expo';
+import * as Font from 'expo-font';
 import { Root } from 'native-base';
 import { Divider, Avatar } from 'react-native-elements';
 

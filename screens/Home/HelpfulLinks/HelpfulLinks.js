@@ -5,8 +5,9 @@
 /* eslint-disable global-require */
 import React, { Component } from 'react';
 import {
-  View, Text, StyleSheet, WebView,
+  View, Text, StyleSheet,
 } from 'react-native';
+import WebView from 'react-native-webview';
 import { MaterialIcons } from '@expo/vector-icons';
 
 const styles = StyleSheet.create({
