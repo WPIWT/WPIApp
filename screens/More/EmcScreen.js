@@ -12,10 +12,6 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { AppLoading } from 'expo';
 import * as Font from 'expo-font';
 import { Root } from 'native-base';
-<<<<<<< HEAD
-=======
-// import Call from 'react-native-phone-call';
->>>>>>> eaafb6b5fc2078bf7770a08a934a541b65f3b34a
 
 const styles = StyleSheet.create({
   header: {
@@ -120,12 +116,6 @@ class EmcScreen extends Component {
       headerBackTitle: null,
     }
 
-    // callCampusPolice() {
-    //   campusPolice.map((item) => (
-    //     call(item.phone).catch(console.error),
-    //   )),
-    // }
-
     constructor(props) {
       super(props);
       this.state = { loading: true };
@@ -159,11 +149,7 @@ class EmcScreen extends Component {
             campusPolice.map((item, i) => (
               <ListItem
                 Component={TouchableScale}
-<<<<<<< HEAD
                 onPress={() => Linking.openURL('tel:$(item.phone)')}
-=======
-                // onPress={}
->>>>>>> eaafb6b5fc2078bf7770a08a934a541b65f3b34a
                 friction={90}
                 tension={100} // here TouchableScale
                 activeScale={0.95}
