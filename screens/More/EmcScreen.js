@@ -5,14 +5,13 @@
 /* eslint-disable global-require */
 /* eslint-disable object-curly-newline */
 import React, { Component } from 'react';
-import { StyleSheet, View, ScrollView, Text } from 'react-native';
+import { StyleSheet, View, ScrollView, Text, Linking } from 'react-native';
 import { ListItem } from 'react-native-elements';
 import TouchableScale from 'react-native-touchable-scale';
 import { MaterialIcons } from '@expo/vector-icons';
 import { AppLoading } from 'expo';
 import * as Font from 'expo-font';
 import { Root } from 'native-base';
-import Call from 'react-native-phone-call';
 
 const styles = StyleSheet.create({
   header: {
@@ -117,6 +116,12 @@ class EmcScreen extends Component {
       headerBackTitle: null,
     }
 
+    // callCampusPolice() {
+    //   campusPolice.map((item) => (
+    //     call(item.phone).catch(console.error),
+    //   )),
+    // }
+
     constructor(props) {
       super(props);
       this.state = { loading: true };
@@ -150,7 +155,7 @@ class EmcScreen extends Component {
             campusPolice.map((item, i) => (
               <ListItem
                 Component={TouchableScale}
-                onPress={}
+                onPress={() => Linking.openURL('tel:$(item.phone)')}
                 friction={90}
                 tension={100} // here TouchableScale
                 activeScale={0.95}
