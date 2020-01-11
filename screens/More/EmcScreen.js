@@ -12,7 +12,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { AppLoading } from 'expo';
 import * as Font from 'expo-font';
 import { Root } from 'native-base';
-import Call from 'react-native-phone-call';
+// import Call from 'react-native-phone-call';
 
 const styles = StyleSheet.create({
   header: {
@@ -150,7 +150,7 @@ class EmcScreen extends Component {
             campusPolice.map((item, i) => (
               <ListItem
                 Component={TouchableScale}
-                onPress={}
+                // onPress={}
                 friction={90}
                 tension={100} // here TouchableScale
                 activeScale={0.95}
