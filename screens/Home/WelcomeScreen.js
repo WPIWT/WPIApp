@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
   helpfulButton: {
     flex: 1,
     height: 70,
-    marginTop: 10,
+    marginTop: 20,
     marginLeft: 20,
     marginRight: 20,
     flexDirection: 'row',
@@ -153,20 +153,12 @@ export default class WelcomeScreen extends Component {
           <View style={{ height: 150, marginTop: 20 }}>
             <CardSlider>
               <View style={{
-                height: 150, justifyContent: 'center', alignItems: 'center', backgroundColor: '#83A82A', borderRadius: 10,
+                height: 150, justifyContent: 'center', alignItems: 'center', backgroundColor: '#E8E8E8', borderRadius: 10,
               }}
               >
-               <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold', fontFamily: 'MyriadPro-Regular' }}>
-                  Latest Events
+               <Text style={{ color: 'black', fontSize: 24, fontWeight: 'bold', fontFamily: 'MyriadPro-Regular' }}>
+                  Upcoming Events
                </Text>
-              </View>
-              <View style={{
-                height: 150, justifyContent: 'center', alignItems: 'center', backgroundColor: 'lightpink', borderRadius: 10,
-              }}
-              >
-              <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold', fontFamily: 'MyriadPro-Regular' }}>
-                Latest Events
-              </Text>
               </View>
             </CardSlider>
           </View>
@@ -250,19 +242,19 @@ export default class WelcomeScreen extends Component {
           </View>
 
 
-          <TouchableOpacity onPress={() => this.props.navigation.navigate('HelpfulScreen')}>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('MoreScreen')}>
             <View style={styles.helpfulButton}>
                     <Text style={styles.helpfulText}>Helpful Links</Text>
                     <MaterialIcons name="chevron-right" size={30} color="#585858" style={{ textAlign: 'right', marginBottom: 20 }} />
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => this.props.navigation.navigate('CampusMap')}>
+          {/* <TouchableOpacity onPress={() => this.props.navigation.navigate('CampusMap')}>
             <View style={styles.helpfulButton}>
                     <Text style={styles.helpfulText}>Campus Map</Text>
                     <MaterialIcons name="chevron-right" size={30} color="#585858" style={{ textAlign: 'right', marginBottom: 20 }} />
             </View>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
 
 
           <Card
