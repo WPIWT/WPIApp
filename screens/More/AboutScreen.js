@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-  lastAvatar: {
+  lastRowAvatar: {
     flex: 1,
     marginTop: 15,
     marginLeft: 20,
@@ -140,60 +140,10 @@ class AboutScreen extends React.Component {
             </Text>
             <Divider style={{ backgroundColor: 'white', marginVertical: 15 }} />
             <Text style={styles.header3}>
-              University Innovation Fellows
-            </Text>
-          </View>
-
-          <View style={styles.avatarContainer}>
-            <TouchableOpacity>
-              <View style={styles.buttonContainer}>
-                <Avatar
-                  source={require('../../assets/teamPics/DennisLeary.jpg')}
-                  size="large"
-                  rounded
-                  title="DL"
-                  activeOpacity={1}
-                />
-                <Divider style={{ height: 10, backgroundColor: 'white' }} />
-                <Text style={styles.avatarText}>Dennis Leary</Text>
-              </View>
-            </TouchableOpacity>
-
-            <TouchableOpacity>
-              <View style={styles.buttonContainer}>
-                <Avatar
-                  source={require('../../assets/teamPics/AnikaStundtner.jpg')}
-                  size="large"
-                  rounded
-                  title="AS"
-                  activeOpacity={1}
-                />
-                <Divider style={{ height: 10, backgroundColor: 'white' }} />
-                <Text style={styles.avatarText}>Anika Stundtner</Text>
-              </View>
-            </TouchableOpacity>
-
-            <TouchableOpacity>
-              <View style={styles.buttonContainer}>
-                <Avatar
-                  source={require('../../assets/teamPics/SydneyMessey.jpg')}
-                  size="large"
-                  rounded
-                  title="SM"
-                  activeOpacity={1}
-                />
-                <Divider style={{ height: 10, backgroundColor: 'white' }} />
-                <Text style={styles.avatarText}>Sydney Messey</Text>
-              </View>
-            </TouchableOpacity>
-          </View>
-
-          <View style={styles.paragraph}>
-            <Divider style={{ backgroundColor: 'white', marginVertical: 5 }} />
-            <Text style={styles.header3}>
               Developers
             </Text>
           </View>
+
           <View style={styles.avatarContainer}>
             <TouchableOpacity>
               <View style={styles.buttonContainer}>
@@ -238,7 +188,7 @@ class AboutScreen extends React.Component {
             </TouchableOpacity>
           </View>
 
-          <View style={styles.lastAvatar}>
+          <View style={styles.lastRowAvatar}>
             <TouchableOpacity>
               <View style={styles.buttonContainer}>
                 <Avatar
@@ -250,6 +200,71 @@ class AboutScreen extends React.Component {
                 />
                 <Divider style={{ height: 10, backgroundColor: 'white' }} />
                 <Text style={styles.avatarText}>Lucas Varella</Text>
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity>
+              <View style={styles.buttonContainer}>
+                <Avatar
+                  source={require('../../assets/teamPics/YashPatel.jpg')}
+                  size="large"
+                  rounded
+                  title="LV"
+                  activeOpacity={1}
+                />
+                <Divider style={{ height: 10, backgroundColor: 'white' }} />
+                <Text style={styles.avatarText}>Yash Patel</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+
+          <View style={styles.paragraph}>
+            <Divider style={{ backgroundColor: 'white', marginVertical: 5 }} />
+            <Text style={styles.header3}>
+              University Innovation Fellowship
+            </Text>
+          </View>
+
+          <View style={styles.avatarContainer}>
+            <TouchableOpacity>
+              <View style={styles.buttonContainer}>
+                <Avatar
+                  source={require('../../assets/teamPics/DennisLeary.jpg')}
+                  size="large"
+                  rounded
+                  title="DL"
+                  activeOpacity={1}
+                />
+                <Divider style={{ height: 10, backgroundColor: 'white' }} />
+                <Text style={styles.avatarText}>Dennis Leary</Text>
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity>
+              <View style={styles.buttonContainer}>
+                <Avatar
+                  source={require('../../assets/teamPics/AnikaStundtner.jpg')}
+                  size="large"
+                  rounded
+                  title="AS"
+                  activeOpacity={1}
+                />
+                <Divider style={{ height: 10, backgroundColor: 'white' }} />
+                <Text style={styles.avatarText}>Anika Stundtner</Text>
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity>
+              <View style={styles.buttonContainer}>
+                <Avatar
+                  source={require('../../assets/teamPics/SydneyMessey.jpg')}
+                  size="large"
+                  rounded
+                  title="SM"
+                  activeOpacity={1}
+                />
+                <Divider style={{ height: 10, backgroundColor: 'white' }} />
+                <Text style={styles.avatarText}>Sydney Messey</Text>
               </View>
             </TouchableOpacity>
           </View>
